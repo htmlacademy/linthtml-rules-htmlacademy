@@ -1,2 +1,2 @@
 # linthtml-rules-htmlacademy
-Кастомные правила для linthmlt от HTML Academy
+Кастомные правила для linthtml от HTML Academy
