@@ -35,21 +35,6 @@ module.exports = {
           }
         }
       }
-    },
-    {
-      name: "htmlacademy/attr-value-style",
-      lint(node, { ignore = [] }, { report }) {
-        if (dom_utils.is_tag_node(node)) {
-          node.attributes.forEach(({ value, name }) => {
-            if (!ignore.includes(name.chars) && value && check_format(value.chars) === false) {
-              report({
-                position: value.loc,
-                message: `The value ${value.chars} of the attribute ${name.chars} should be in the dash format.`
-              });
-            }
-          });
-        }
-      }
     }
   ]
 };
