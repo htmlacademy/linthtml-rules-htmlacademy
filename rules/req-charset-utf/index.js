@@ -1,7 +1,7 @@
 const dom_utils = require("@linthtml/dom-utils");
 
 module.exports = {
-  name: "htmlacademy/head-req-charset-utf",
+  name: "htmlacademy/req-charset-utf",
   lint(node, rule_config, { report }) {
     if (dom_utils.is_tag_node(node) && node.name === "meta") {
       const hasUtf = node.attributes.some(attribute => attribute.value.chars.toLowerCase() === 'utf-8');
