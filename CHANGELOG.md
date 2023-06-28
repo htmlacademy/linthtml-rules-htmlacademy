@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3
+- rename `head-req-charset-utf` to `req-charset-utf`
+
 ## 1.0.2
 - removes `attr-value-style`;
 - takes the rules to the components.
