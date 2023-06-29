@@ -1,5 +1,14 @@
 const dom_utils = require("@linthtml/dom-utils");
+const requiredAttributes = [
+  { name: 'rel', value: 'nofollow' },
+  { name: 'rel', value: 'noopener' },
+];
 
+function isMissingAttribute(node, attribute) {
+  return !node.attributes.some((attr) => (
+    attr.name.chars === attribute.name && attr.value.chars.includes(attribute.value)
+  ));
+}
 module.exports = {
   name: "htmlacademy/a-target-rel",
   lint(node, rule_config, { report }) {
