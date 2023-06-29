@@ -4,7 +4,7 @@
 - Rename `head-req-charset-utf` to `req-charset-utf`
 - Rename `head-req-meta` to `head-meta-charset`
 - Adds a description of the rules
-- Adds htmlacademy/charset-position
+- Adds `htmlacademy/charset-position`
 
 ## 1.0.2
 - removes `attr-value-style`;
