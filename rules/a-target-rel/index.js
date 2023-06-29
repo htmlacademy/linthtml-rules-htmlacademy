@@ -30,7 +30,14 @@ module.exports = {
             attr.value.chars.includes(attribute.value)
         )
       );
-
+requiredAttributes
+        .filter((attribute) => isMissingAttribute(node, attribute))
+        .forEach((attribute) => {
+          report({
+            position: node.loc,
+            message: `The <a> element with target="_blank" is missing the "${attribute.name}=${attribute.value}" attribute.`,
+          });
+        });
       missingAttributes.forEach((attribute) => {
         report({
           position: node.loc,
