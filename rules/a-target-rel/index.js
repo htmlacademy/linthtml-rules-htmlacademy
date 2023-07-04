@@ -5,7 +5,7 @@ const requiredAttributes = {
 };
 
 const isEveryValuePresent = (node, attr, values) => {
-  return values.every(val => attribute_has_value(node, attr, val))
+  return values.every(val => attribute_has_value(node, attr, new RegExp(val)))
 }
 
 const isExternalLink = (node) => {
