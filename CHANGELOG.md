@@ -5,6 +5,7 @@
 - Rename `head-req-meta` to `head-meta-charset`
 - Adds a description of the rules
 - Adds `htmlacademy/charset-position`
+- Adds `form-action-attribute`
 - Adds `img-svg-req-dimensions`
 
 ## 1.0.2
