@@ -6,6 +6,7 @@
 - Adds a description of the rules
 - Adds `htmlacademy/charset-position`
 - Adds `form-action-attribute`
+- Adds `img-svg-req-dimensions`
 
 ## 1.0.2
 - removes `attr-value-style`;
