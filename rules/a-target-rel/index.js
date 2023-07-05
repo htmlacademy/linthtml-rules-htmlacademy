@@ -1,7 +1,7 @@
 const { is_tag_node, attribute_has_value } = require("@linthtml/dom-utils");
 const requiredAttributes = {
   // todo вынести в конфиг правила
-  rel: ["nofollow", "noopener"]
+  rel: ["noreferrer", "noopener"]
 };
 
 const isEveryValuePresent = (node, attr, values) => {
