@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.4
+Fixed name for `head-meta-charset`
+
 ## 1.0.3
 - Rename `head-req-charset-utf` to `req-charset-utf`
 - Rename `head-req-meta` to `head-meta-charset`
