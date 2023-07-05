@@ -8,6 +8,7 @@
 - Adds `form-action-attribute`
 - Adds `img-svg-req-dimensions`
 - Adds `no-double-br`
+- Adds `a-target-rel`
 
 ## 1.0.2
 - removes `attr-value-style`;
