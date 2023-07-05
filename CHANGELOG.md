@@ -7,6 +7,7 @@
 - Adds `htmlacademy/charset-position`
 - Adds `form-action-attribute`
 - Adds `img-svg-req-dimensions`
+- Adds `no-double-br`
 
 ## 1.0.2
 - removes `attr-value-style`;
