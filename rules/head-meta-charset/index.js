@@ -1,7 +1,7 @@
 const dom_utils = require("@linthtml/dom-utils");
 
 module.exports = {
-  name: "htmlacademy/head-req-meta",
+  name: "htmlacademy/head-meta-charset",
   lint(node, rule_config, { report }) {
     if (dom_utils.is_tag_node(node) && node.name === "head") {
       const meta = node.children.filter((child) => child.name === "meta");
