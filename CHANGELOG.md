@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.5
+Adds new rule htmlacademy/section-has-heading
+
 ## 1.0.4
 Fixed name for `head-meta-charset`
 
