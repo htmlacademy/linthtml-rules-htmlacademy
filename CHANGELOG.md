@@ -1,7 +1,18 @@
 # Changelog
 
 ## 1.0.5
-Adds new rule htmlacademy/section-has-heading
+Adds new rule `htmlacademy/section-has-heading`
+```html
+ <section>
+  <h2>title</h2>
+</section>
+
+ <section>
+   <div>
+      <h2>title</h2>
+   </div>
+</section>
+```
 
 ## 1.0.4
 Fixed name for `head-meta-charset`
