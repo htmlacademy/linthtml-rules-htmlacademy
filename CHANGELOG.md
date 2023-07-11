@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.6
+Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
+
+```js
+{
+  'htmlacademy/attr-req-value': [true, { ignore: ['alt']}]
+}
+```
+
+```html
+<button class="foo"></button>
+<button disabled></button>
+<img src="images/image.jpg" width="100" height="100" alt="">
+```
+
 ## 1.0.5
 Adds new rule `htmlacademy/section-has-heading`
 ```html
