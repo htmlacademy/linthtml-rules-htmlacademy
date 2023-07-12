@@ -13,7 +13,7 @@ module.exports = {
     if (is_tag_node(node) && (node.name === "img" || node.name === "svg")) {
       const requiredAttributes = ["width", "height"];
       const missingAttributes = requiredAttributes.filter((attr) =>
-          has_non_empty_attribute(node, attr) && !onlyDigits(attribute_value(node, attr))
+          has_non_empty_attribute(node, attr) && !onlyDigits(attribute_value(node, attr).chars)
       );
       missingAttributes.forEach((attr) => {
         report({
