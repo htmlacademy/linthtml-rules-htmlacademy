@@ -18,7 +18,7 @@ module.exports = {
   name: "htmlacademy/no-blocking-script",
   lint(node, rule_config, { report }) {
     if (is_tag_node(node) && node.name === 'script') {
-      if (!isAsync(node) || !isLastBodyElement(node)) {
+      if (!isAsync(node) && !isLastBodyElement(node)) {
         report({
           position: node.loc,
           message: `Script tag should be the last element or async.`,
