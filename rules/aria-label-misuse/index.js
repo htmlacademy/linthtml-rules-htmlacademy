@@ -11,11 +11,11 @@ const interactive = ["a", "audio", "button", "details", "iframe", "input", "prog
 
 function isValidUsage(node) {
   /* landmark and other whitelisted elements are valid */
-  if (whitelisted.includes(node.name.chars.toLowerCase())) {
+  if (whitelisted.includes(node.name.toLowerCase())) {
     return true;
   }
 
-  if (interactive.includes(node.name.chars.toLowerCase())) {
+  if (interactive.includes(node.name.toLowerCase())) {
     return true;
   }
 
