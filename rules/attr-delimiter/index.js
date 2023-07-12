@@ -1,6 +1,5 @@
 const { is_tag_node } = require("@linthtml/dom-utils");
 
-// node.attributes.map(a => a.equal.chars)
 module.exports = {
   name: "htmlacademy/attr-delimiter",
   lint(node, rule_config, { report }) {
