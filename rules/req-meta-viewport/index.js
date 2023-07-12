@@ -8,7 +8,7 @@ module.exports = {
           child.name === "meta" && attribute_has_value(child, 'name', 'viewport')
       );
       const hasViewport = metaViewport.some((meta) => {
-        return attribute_has_value(meta, 'content', 'width=device-width,initial-scale=1');
+        return attribute_has_value(meta, 'content', /width=device-width,.*initial-scale=1|initial-scale=1,.*width=device-width/);
       });
       if (hasViewport === false) {
         report({
