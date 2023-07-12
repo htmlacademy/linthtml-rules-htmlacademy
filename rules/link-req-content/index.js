@@ -1,17 +1,17 @@
 const { has_non_empty_attribute, is_comment_node, is_text_node, is_tag_node } = require("@linthtml/dom-utils");
 
 function has_text_content(node) {
-  if (has_non_empty_attribute(node, "aria-label")) {
-    return true;
-  }
-  if (has_non_empty_attribute(node, "alt")) {
-    return true;
-  }
   if (is_comment_node(node)) {
     return false;
   }
   if (is_text_node(node)) {
     return node.data.trim().length > 0;
+  }
+  if (has_non_empty_attribute(node, "aria-label")) {
+    return true;
+  }
+  if (has_non_empty_attribute(node, "alt")) {
+    return true;
   }
   for (const child of node.children) {
     if (has_text_content(child)) {
