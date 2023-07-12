@@ -4,7 +4,7 @@ const {
 } = require("@linthtml/dom-utils");
 
 const whitelisted = [
-  "main", "nav", "table", "td", "th", "aside", "header", "footer", "section", "article", "form", "fieldset", "summary", "figure",
+  "main", "nav", "table", "td", "th", "aside", "header", "footer", "section", "article", "summary",
 ];
 
 const interactive = ["a", "audio", "button", "details", "iframe", "input", "progress", "select", "textarea", "video"]
