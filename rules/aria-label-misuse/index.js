@@ -26,7 +26,7 @@ function isValidUsage(node) {
 module.exports = {
   name: "htmlacademy/aria-label-misuse",
   lint(node, rule_config, { report }) {
-    if (is_tag_node(node) && !isValidUsage(node)) {
+    if (is_tag_node(node) && has_non_empty_attribute(node, 'aria-label') && !isValidUsage(node)) {
       report({
         position: node.loc,
         message: "\"aria-label\" cannot be used on this element",
