@@ -14,6 +14,8 @@ Added so many new rules:
 - [req-head-styles](rules/req-head-styles/README.md)
 - [req-meta-viewport](rules/req-meta-viewport/README.md)
 - [req-single-styles](rules/req-single-styles/README.md)
+- [tag-name-lowercase](rules/tag-name-lowercase/README.md)
+- [tag-self-close](rules/tag-self-close/README.md)
 
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
