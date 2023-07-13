@@ -3,7 +3,7 @@
 ## 1.0.7
 Added so many new rules:
 - [htmlacademy/aria-label-misuse](rules/aria-label-misuse/README.md)
-
+- [attr-delimiter](rules/attr-delimiter/README.md)
 
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
