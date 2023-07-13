@@ -12,6 +12,7 @@
 | [htmlacademy/class-first](../rules/class-first/README.md)                           | Требует указывать первым атрибутом у любого элемента `class`                |
 | [htmlacademy/form-action-attribute](../rules/form-action-attribute/README.md)       | Требует указывать атрибут `action` у `<form>`                               |
 | [htmlacademy/head-meta-charset](../rules/head-meta-charset/README.md)               | Проверяет наличие `<meta charset="utf-8">` в `<head>`                       |
+| [htmlacademy/id-no-dup](../rules/id-no-dup/README.md)                               | Запрешает дублирование `id` на странице                                     |
 | [htmlacademy/img-svg-req-dimensions](../rules/img-svg-req-dimensions/README.md)     | Требует атрибуты `width` и `height` у `<img>` и `<svg>`                     |
 | [htmlacademy/no-double-br](../rules/no-double-br/README.md)                         | Запрещает идущие подряд двойной `<br>`                                      |
 | [htmlacademy/req-charset-utf](../rules/req-charset-utf/README.md)                   | Требует `UTF-8` для `<meta charset="">`                                     |
