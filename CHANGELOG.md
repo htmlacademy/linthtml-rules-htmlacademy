@@ -12,6 +12,7 @@ Added so many new rules:
 - [no-blocking-script](rules/no-blocking-script/README.md)
 - [no-px-size](rules/no-px-size/README.md)
 - [req-head-styles](rules/req-head-styles/README.md)
+- [req-meta-viewport](rules/req-meta-viewport/README.md)
 
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
