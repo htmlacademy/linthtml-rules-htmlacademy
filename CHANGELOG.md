@@ -4,6 +4,8 @@
 Added so many new rules:
 - [htmlacademy/aria-label-misuse](rules/aria-label-misuse/README.md)
 - [attr-delimiter](rules/attr-delimiter/README.md)
+- [attribute-allowed-values](rules/attribute-allowed-values/README.md)
+- 
 
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
