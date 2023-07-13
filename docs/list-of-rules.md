@@ -22,4 +22,5 @@
 | [htmlacademy/req-charset-utf](../rules/req-charset-utf/README.md)                   | Требует `UTF-8` для `<meta charset="">`                                                            |
 | [htmlacademy/req-head-styles](../rules/req-head-styles/README.md)                   | Запрещает подключение стилей вне `<head>`                                                          |
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
+| [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)           | Требует добавление заголовка любого уровня в `<section>`                                           |
