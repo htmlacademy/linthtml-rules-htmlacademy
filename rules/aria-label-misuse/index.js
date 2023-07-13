@@ -7,7 +7,9 @@ const whitelisted = [
   "main", "nav", "table", "td", "th", "aside", "header", "footer", "section", "article", "summary",
 ];
 
-const interactive = ["a", "audio", "button", "details", "iframe", "input", "progress", "select", "textarea", "video"]
+const interactive = [
+    "a", "audio", "button", "details", "iframe", "input", "label", "progress", "select", "textarea", "video",
+];
 
 function isValidUsage(node) {
   /* landmark and other whitelisted elements are valid */

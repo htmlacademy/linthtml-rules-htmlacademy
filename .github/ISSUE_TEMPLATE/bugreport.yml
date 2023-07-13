@@ -2,8 +2,6 @@ name: 'Сообщение о проблеме'
 description: 'Issue для сообщения о проблеме или баге'
 title: 'Проблема: '
 labels: ['bug']
-assignees:
-  - nikolai-shabalin
 body:
   - type: markdown
     attributes:

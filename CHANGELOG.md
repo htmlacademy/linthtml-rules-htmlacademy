@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.8
+- Refines the list of interactive elements for aria-label-misuse
+  - Adds `<label>`
+
 ## 1.0.7
 Added so many new rules:
 - [htmlacademy/aria-label-misuse](rules/aria-label-misuse/README.md)
