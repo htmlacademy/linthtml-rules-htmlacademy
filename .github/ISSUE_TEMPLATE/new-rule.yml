@@ -2,8 +2,6 @@ name: 'Новое правило'
 description: 'Issue для предложения нового правила в линтер'
 title: 'Правило: '
 labels: ["enhancement"]
-assignees:
-  - nikolai-shabalin
 body:
   - type: markdown
     attributes:
