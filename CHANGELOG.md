@@ -10,6 +10,7 @@ Added so many new rules:
 - [input-req-label](rules/input-req-label/README.md)
 - [link-req-content](rules/link-req-content/README.md)
 - [no-blocking-script](rules/no-blocking-script/README.md)
+- [no-px-size](rules/no-px-size/README.md)
 
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
