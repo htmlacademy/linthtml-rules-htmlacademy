@@ -5,11 +5,11 @@
 
 Проблемными считаются следующие шаблоны:
 ```html
-<a href="https://htmlacademy.pro?query=some long param" target="_blank">Link</a>
+<a href="https://htmlacademy.pro?query=some long param">Link</a>
 ```
 
 Следующие шаблоны **не** считаются проблемами:
 
 ```html
-<a href="https://htmlacademy.pro?query=some%20long%20param" target="_blank">Link</a>
+<a href="https://htmlacademy.pro?query=some%20long%20param">Link</a>
 ```

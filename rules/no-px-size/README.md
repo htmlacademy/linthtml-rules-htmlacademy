@@ -13,7 +13,7 @@
 
 Следующие шаблоны **не** считаются проблемами:
 ```html
-<img src="images/image.jpg" width="500" height="300" alt="">
+<img width="500" height="300" src="images/image.jpg" alt="">
 
 <svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
   <rect x="0" y="0"></rect>

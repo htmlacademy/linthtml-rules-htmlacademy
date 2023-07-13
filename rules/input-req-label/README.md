@@ -2,7 +2,7 @@
 
 Форк: https://linthtml.vercel.app/user-guide/rules/list/input-req-label
 
-Правило требует наличие метки для поля ввода, и позволяет указать метку в `aria-label`
+Правило требует наличие метки для поля ввода, и позволяет указать метку в `aria-label`.
 
 ## true
 Если включён, то метки не могут быть пустыми.
@@ -10,7 +10,7 @@
 
 Проблемными считаются следующие шаблоны:
 ```html
-<input type="text" value="great" >
+<input type="text" value="great">
 
 <div>
   <label for="dinosaur">Label!</label>

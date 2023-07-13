@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.7
+Added so many new rules:
+- [htmlacademy/aria-label-misuse](rules/aria-label-misuse/README.md)
+- [attr-delimiter](rules/attr-delimiter/README.md)
+- [attribute-allowed-values](rules/attribute-allowed-values/README.md)
+- [ban-url-spaces](rules/ban-url-spaces/README.md)
+- [id-no-dup](rules/id-no-dup/README.md)
+- [input-req-label](rules/input-req-label/README.md)
+- [link-req-content](rules/link-req-content/README.md)
+- [no-blocking-script](rules/no-blocking-script/README.md)
+- [no-px-size](rules/no-px-size/README.md)
+- [req-head-styles](rules/req-head-styles/README.md)
+- [req-meta-viewport](rules/req-meta-viewport/README.md)
+- [req-single-styles](rules/req-single-styles/README.md)
+- [tag-name-lowercase](rules/tag-name-lowercase/README.md)
+- [tag-self-close](rules/tag-self-close/README.md)
+
 ## 1.0.6
 Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, except for the list from ignore
 
