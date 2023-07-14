@@ -1,3 +1,4 @@
+'use strict';
 // eslint-disable-next-line camelcase
 const { is_tag_node, attribute_has_value } = require('@linthtml/dom-utils');
 const requiredAttributes = {
