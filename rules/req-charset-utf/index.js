@@ -8,7 +8,7 @@ module.exports = {
   lint(node, rule_config, { report }) {
     // eslint-disable-next-line camelcase
     if (dom_utils.is_tag_node(node) && node.name === 'meta') {
-      const hasUtf = node.attributes.some((attribute) => attribute.value.chars.toLowerCase() === 'utf-8');
+      const hasUtf = node.attributes.some((attribute) => attribute?.value?.chars.toLowerCase() === 'utf-8');
       const hasCharset = node.attributes.some((attribute) => attribute.name.chars === 'charset');
 
       if (hasCharset === true && hasUtf === false) {
