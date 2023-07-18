@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint rules/**/*.js",
-    "lint": "eslint"
+    "lint": "npm run eslint"
   },
   "keywords": [],
   "author": "",
