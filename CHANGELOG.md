@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.9
+Fixed `req-charset-utf` rule
+
 ## 1.0.8
 - Refines the list of interactive elements for aria-label-misuse
   - Adds `<label>`
