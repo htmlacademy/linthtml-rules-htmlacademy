@@ -5,5 +5,10 @@
   },
   "extends": [
     "htmlacademy/vanilla"
-  ]
+  ],
+  "rules": {
+    "camelcase": [2, {
+      "ignoreDestructuring": true
+    }]
+  }
 }
