@@ -3,6 +3,7 @@
   "version": "1.0.9",
   "description": "Кастомные правила для linthtml от HTML Academy",
   "main": "index.js",
+  "repository": "htmlacademy/linthtml-rules-htmlacademy",
   "scripts": {
     "eslint": "eslint rules/**/*.js",
     "lint": "npm run eslint"
