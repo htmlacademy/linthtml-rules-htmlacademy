@@ -13,7 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "@linthtml/dom-utils": "0.9.5",
-    "eslint": "8.44.0",
-    "eslint-config-htmlacademy": "9.1.1"
+    "eslint": "8.52.0",
+    "eslint-config-htmlacademy": "10.0.1"
   }
 }
