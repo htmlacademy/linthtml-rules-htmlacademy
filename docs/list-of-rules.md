@@ -1,7 +1,7 @@
 # Список правил от HTML Academy
 
 | Имя правила                                                                         | Описания                                                                                           |
-|:------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
 | [htmlacademy/a-target-rel](../rules/a-target-rel/README.md)                         | Проверяет наличие `rel="noopener noreferrer"` у `<a target="_blank"></a>`                          |
 | [htmlacademy/aria-label-misuse](../rules/aria-label-misuse/README.md)               | Требует использование `aria-label` на определённых элементах                                       |
 | [htmlacademy/attr-delimiter](../rules/attr-delimiter/README.md)                     | Требует удалить пробел между `=` для атрибутов                                                     |
@@ -24,5 +24,6 @@
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
 | [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)           | Требует добавление заголовка любого уровня в `<section>`                                           |
+| [htmlacademy/space-between-comments](../rules/space-between-comments/README.md)     | Требует пробелы у комментария <!-- Это комментарий -->                                             |
 | [htmlacademy/tag-name-lowercase](../rules/tag-name-lowercase/README.md)             | Имена тегов должны быть строчными                                                                  |
 | [htmlacademy/tag-self-close](../rules/tag-self-close/README.md)                     | Одиночные элементы не должны быть закрыты, `<br>` вместо `<br/>`                                   |
