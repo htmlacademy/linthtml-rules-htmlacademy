@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.10
+Added [htmlacademy/space-between-comments](rules/space-between-comments/README.md)
+
 ## 1.0.9
 Fixed `req-charset-utf` rule
 
