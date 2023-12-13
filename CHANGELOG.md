@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.10
+`attr-req-value` can now accept regex for ignore
+
 ## 1.0.9
 Fixed `req-charset-utf` rule
 
