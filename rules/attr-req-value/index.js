@@ -1,6 +1,18 @@
 'use strict';
 // eslint-disable-next-line camelcase
-const { is_tag_node, has_non_empty_attribute, is_boolean_attribute} = require('@linthtml/dom-utils');
+const { is_tag_node, has_non_empty_attribute, is_boolean_attribute } = require('@linthtml/dom-utils');
+const matchesIgnoreList = (attributeName, ignoreList) => ignoreList.some((ignoreItem) => {
+  if (typeof ignoreItem === 'string') {
+    const regexString = ignoreItem.startsWith('/') && ignoreItem.endsWith('/') ? ignoreItem.slice(1, -1) : ignoreItem;
+    const regex = new RegExp(regexString);
+    return regex.test(attributeName);
+  } else if (ignoreItem instanceof RegExp) {
+    return ignoreItem.test(attributeName);
+  } else {
+    return attributeName === ignoreItem;
+  }
+});
+
 
 module.exports = {
   name: 'htmlacademy/attr-req-value',
@@ -12,18 +24,19 @@ module.exports = {
         const name = attribute.name.chars.toLowerCase();
 
         // eslint-disable-next-line camelcase
-        if (!has_non_empty_attribute(node, name) && !is_boolean_attribute(attribute) && !rule_config.ignore?.includes(name)) {
+        if (!has_non_empty_attribute(node, name) && !is_boolean_attribute(attribute) && !matchesIgnoreList(name, rule_config.ignore)
+        ) {
           report({
             code: 'E006',
             position: attribute.loc,
             meta: {
               data: {
-                attribute: name
-              }
-            }
+                attribute: name,
+              },
+            },
           });
         }
       });
     }
-  }
+  },
 };
