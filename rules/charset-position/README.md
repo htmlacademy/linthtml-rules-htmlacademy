@@ -1,6 +1,6 @@
 # htmlacademy/charset-position
 
-Правило позиционирование `<meta charset="">` в `<head>`. Правило принимает значения `true` или `false`
+Правило позиционирования `<meta charset="">` в `<head>`. Правило принимает значения `true` или `false`
 
 ## true 
 `<meta charset="">` указан первым непосредственным ребёнком в `<head>`.

@@ -1,7 +1,10 @@
 # Changelog
 
-## 1.0.10
+## 1.0.11
 Added [htmlacademy/space-between-comments](rules/space-between-comments/README.md)
+
+## 1.0.10
+`attr-req-value` can now accept regex for ignore
 
 ## 1.0.9
 Fixed `req-charset-utf` rule

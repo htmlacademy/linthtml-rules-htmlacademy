@@ -11,12 +11,24 @@
 
 Проблемными считаются следующие шаблоны:
 ```html
-<a><img src="cat.gif"></a>
+<a>
+  <img src="images/cat.gif" width="100" height="1000">
+</a>
+
+<a href="#">
+  <svg>...</svg>
+</a>
 ```
 
 Следующие шаблоны **не** считаются проблемами:
 ```html
-<a>lorem ipsum</a>
-<a><img src="cat.gif" alt="cat page"></a>
-<a aria-label="lorem ipsum"></a>
+<a href="#">
+  lorem ipsum
+</a>
+
+<a href="#">
+  <img src="images/cat.gif" width="100" height="100" alt="cat page">
+</a>
+
+<a href="#" aria-label="lorem ipsum"></a>
 ```

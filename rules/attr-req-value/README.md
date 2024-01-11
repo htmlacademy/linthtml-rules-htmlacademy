@@ -27,13 +27,13 @@
 ```
 
 ### ignore
-Игнорирует перечисленный список атрибутов
+Игнорирует перечисленный список атрибутов. Принимает значения `string|regex`
 
 ```js
 {
   'htmlacademy/attr-req-value': [true, 
     { 
-      ignore: ['alt']
+      ignore: ['alt', '/^data-/']
     }
   ]
 }
@@ -49,4 +49,5 @@
 
 ```html
 <img src="images/image.jpg" width="100" height="100" alt="">
+<section data-test></section>
 ```

@@ -14,7 +14,6 @@
 ```
 
 Следующие шаблоны **не** считаются проблемами:
-
 ```html
 <a href="https://htmlacademy.pro" target="_blank" rel="noreferrer noopener">Link</a>
 
