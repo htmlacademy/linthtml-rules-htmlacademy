@@ -51,3 +51,17 @@
 <img src="images/image.jpg" width="100" height="100" alt="">
 <section data-test></section>
 ```
+
+## Исключения
+Один `<option>` в `<select>` может быть c пустым значением, если он выбран по умолчанию.
+
+Следующий шаблон **не** считается проблемой:
+
+```html
+<label for="fruits">Fruits</label>
+<select id="fruits" name="fruits" required>
+  <option value="">Select...</option>
+  <option value="banana">Banana</option>
+  <option value="apple">Apple</option>
+</select>
+```
