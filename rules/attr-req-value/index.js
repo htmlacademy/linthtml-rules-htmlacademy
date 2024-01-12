@@ -26,9 +26,9 @@ const hasMultipleEmptyOptions = (node) => {
 module.exports = {
   name: 'htmlacademy/attr-req-value',
   // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }){
+  lint(node, rule_config, { report }) {
     if (is_tag_node(node)) {
-      const attributes = node.attributes.filter(({ name }) => !/^¤+$/.test(name.chars));
+      const attributes = node.attributes.filter(({ name }) => /^¤+$/.test(name.chars) === false);
       attributes.forEach((attribute) => {
         const name = attribute.name.chars.toLowerCase();
 
