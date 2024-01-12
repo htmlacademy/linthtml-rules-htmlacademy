@@ -2,6 +2,16 @@
 
 ## 1.0.11
 Added [htmlacademy/space-between-comments](rules/space-between-comments/README.md)
+```js
+rules: {
+  'htmlacademy/space-between-comments': [true, 'space' | 'no-space]
+}
+```
+
+```html
+<!-- Comment --> // space
+<!--Comment--> // no-space
+```
 
 ## 1.0.10
 `attr-req-value` can now accept regex for ignore
