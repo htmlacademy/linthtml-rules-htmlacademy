@@ -1,6 +1,6 @@
 {
   "name": "linthtml-rules-htmlacademy",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Кастомные правила для linthtml от HTML Academy",
   "main": "index.js",
   "repository": "htmlacademy/linthtml-rules-htmlacademy",
