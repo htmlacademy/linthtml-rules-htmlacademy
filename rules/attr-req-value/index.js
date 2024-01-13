@@ -13,6 +13,17 @@ const matchesIgnoreList = (attributeName, ignoreList) => ignoreList.some((ignore
   }
 });
 
+const isValidOptionValue = (node, name) => {
+  if (name !== 'value' || !node.parent || node.parent.tagName !== 'select') {
+    return true;
+  }
+
+  const emptyOptions = node.parent.children.filter((child) =>
+    child.tagName === 'option' && !has_non_empty_attribute(child, 'value')
+  );
+
+  return emptyOptions.length > 1;
+};
 
 module.exports = {
   name: 'htmlacademy/attr-req-value',
@@ -24,17 +35,18 @@ module.exports = {
         const name = attribute.name.chars.toLowerCase();
 
         // eslint-disable-next-line camelcase
-        if (!has_non_empty_attribute(node, name) && !is_boolean_attribute(attribute) && !matchesIgnoreList(name, rule_config.ignore)
-        ) {
-          report({
-            code: 'E006',
-            position: attribute.loc,
-            meta: {
-              data: {
-                attribute: name,
+        if (!has_non_empty_attribute(node, name) && !is_boolean_attribute(attribute) && !matchesIgnoreList(name, rule_config.ignore)) {
+          if (isValidOptionValue(node, name)) {
+            report({
+              code: 'E006',
+              position: attribute.loc,
+              meta: {
+                data: {
+                  attribute: name,
+                },
               },
-            },
-          });
+            });
+          }
         }
       });
     }
