@@ -13,14 +13,16 @@ const matchesIgnoreList = (attributeName, ignoreList) => ignoreList.some((ignore
   }
 });
 
-const hasMultipleEmptyOptions = (node) => {
-  if (node.parent && node.parent.tagName === 'select') {
-    const emptyOptions = node.parent.children.filter((child) =>
-      child.tagName === 'option' && !has_non_empty_attribute(child, 'value')
-    );
-    return emptyOptions.length > 1;
+const isValidOptionValue = (node, name) => {
+  if (name !== 'value' || !node.parent || node.parent.tagName !== 'select') {
+    return true;
   }
-  return false;
+
+  const emptyOptions = node.parent.children.filter((child) =>
+    child.tagName === 'option' && !has_non_empty_attribute(child, 'value')
+  );
+
+  return emptyOptions.length > 1;
 };
 
 module.exports = {
@@ -34,7 +36,7 @@ module.exports = {
 
         // eslint-disable-next-line camelcase
         if (!has_non_empty_attribute(node, name) && !is_boolean_attribute(attribute) && !matchesIgnoreList(name, rule_config.ignore)) {
-          if (!(name === 'value' && node.parent && node.parent.tagName === 'select' && !hasMultipleEmptyOptions(node))) {
+          if (isValidOptionValue(node, name)) {
             report({
               code: 'E006',
               position: attribute.loc,
