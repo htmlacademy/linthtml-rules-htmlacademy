@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.12
+Fix `htmlacademy/attr-req-value` rule
+
+### Exceptions 
+A single `<option>` in `<select>` may have an empty value for the `value` attribute if it is selected by default.
+
+The following pattern is **not** considered a problem:
+
+```html
+<label for="fruits">Fruits</label>
+<select id="fruits" name="fruits" required>
+  <option value="">Select...</option>
+  <option value="banana">Banana</option>
+  <option value="apple">Apple</option>
+</select>
+```
+
 ## 1.0.11
 Added [htmlacademy/space-between-comments](rules/space-between-comments/README.md)
 ```js
