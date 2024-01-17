@@ -1,6 +1,6 @@
 'use strict';
 /* eslint-disable camelcase */
-const {is_tag_node, attribute_value, attribute_has_value, has_non_empty_attribute,} = require('@linthtml/dom-utils');
+const { is_tag_node, attribute_value, attribute_has_value, has_non_empty_attribute } = require('@linthtml/dom-utils');
 
 class Issue {
   code;
