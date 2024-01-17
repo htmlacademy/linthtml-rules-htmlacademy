@@ -1,13 +1,13 @@
 'use strict';
 // eslint-disable-next-line camelcase
-const dom_utils = require('@linthtml/dom-utils');
+const { is_tag_node } = require('@linthtml/dom-utils');
 
 module.exports = {
   name: 'htmlacademy/form-action-attribute',
   // eslint-disable-next-line camelcase
   lint(node, rule_config, { report }) {
     // eslint-disable-next-line camelcase
-    if (dom_utils.is_tag_node(node) && node.name === 'form') {
+    if (is_tag_node(node) && node.name === 'form') {
       const actionAttribute = node.attributes.find(
         (attr) => attr.name.chars === 'action'
       );

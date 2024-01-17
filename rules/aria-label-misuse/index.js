@@ -10,7 +10,7 @@ const interactive = [
   'a', 'audio', 'button', 'details', 'iframe', 'input', 'label', 'progress', 'select', 'textarea', 'video',
 ];
 
-function isValidUsage(node) {
+const isValidUsage = (node) => {
   /* landmark and other whitelisted elements are valid */
   if (whitelisted.includes(node.name.toLowerCase())) {
     return true;
@@ -22,7 +22,7 @@ function isValidUsage(node) {
 
   /* elements with tabindex (implicit interactive) are valid */
   return has_non_empty_attribute(node, 'tabindex');
-}
+};
 
 module.exports = {
   name: 'htmlacademy/aria-label-misuse',

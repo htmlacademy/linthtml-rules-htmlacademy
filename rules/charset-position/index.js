@@ -1,13 +1,13 @@
 'use strict';
 // eslint-disable-next-line camelcase
-const dom_utils = require('@linthtml/dom-utils');
+const { is_tag_node } = require('@linthtml/dom-utils');
 
 module.exports = {
   name: 'htmlacademy/charset-position',
   // eslint-disable-next-line camelcase
   lint(node, rule_config, { report }) {
     // eslint-disable-next-line camelcase
-    if (dom_utils.is_tag_node(node) && node.name === 'head') {
+    if (is_tag_node(node) && node.name === 'head') {
       const childrenWithoutText = node.children.filter((children) => children.type !== 'text');
       const firstElement = childrenWithoutText[0];
       const hasMeta = firstElement.name === 'meta';

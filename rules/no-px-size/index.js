@@ -1,6 +1,6 @@
 'use strict';
 // eslint-disable-next-line camelcase
-const {is_tag_node, has_non_empty_attribute, attribute_value, get_attribute} = require('@linthtml/dom-utils');
+const { is_tag_node, has_non_empty_attribute, attribute_value, get_attribute } = require('@linthtml/dom-utils');
 
 const onlyDigits = (val) => /^\d+$/.test(val);
 
