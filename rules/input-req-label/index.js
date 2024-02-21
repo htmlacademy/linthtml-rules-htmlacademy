@@ -28,6 +28,7 @@ module.exports = {
     if (!is_tag_node(node) || !['input', 'label'].includes(node.name)) {
       return;
     }
+
     // if it's a label with a 'for', store that value
     if (node.name === 'label') {
       const for_attribute = attribute_value(node, 'for');
@@ -37,11 +38,10 @@ module.exports = {
       return;
     }
 
-    if (attribute_has_value(node, 'type', 'hidden')) {
-      return;
-    }
+    const isHiddenOrSubmitType = (input) => ['hidden', 'submit'].some((type) => attribute_has_value(input, 'type', type));
+    const hasAriaLabel = has_non_empty_attribute(node, 'aria-label');
 
-    if (has_non_empty_attribute(node, 'aria-label')) {
+    if (isHiddenOrSubmitType(node) || hasAriaLabel) {
       return;
     }
 

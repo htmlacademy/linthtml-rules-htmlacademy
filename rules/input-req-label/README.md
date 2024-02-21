@@ -39,4 +39,5 @@
 
 <input type="hidden" value="dinosaur">
 
+<input type="submit" value="submit">
 ```
