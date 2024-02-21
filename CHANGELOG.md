@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.13
+Excludes the `<input type="submit">` check from the [input-req-label](rules/input-req-label/README.md) rule.
+
 ## 1.0.12
 Fix `htmlacademy/attr-req-value` rule
 
