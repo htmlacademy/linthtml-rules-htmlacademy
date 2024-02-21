@@ -62,17 +62,21 @@
 Поле `ignore` позволяет игнорировать атрибуты в зависимости от их значений.
 
 ```json
-'htmlacademy/tag-req-attr': [
-  true,
-  'input': [
+{
+  'htmlacademy/tag-req-attr': [
+    true,
     {
-      name: 'name',
-      ignore: {
-        type: 'submit'
-      }
-    },
-  ],
-]
+      'input': [
+        {
+          name: 'name',
+          ignore: {
+            'type': 'submit'
+          }
+        }
+      ]
+    }
+  ]
+}
 ```
 
 Нарушениями считаются следующие модели:
