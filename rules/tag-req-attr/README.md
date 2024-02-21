@@ -63,15 +63,15 @@
 
 ```json
 'htmlacademy/tag-req-attr': [
-  'ignore', {
-    'input': [
-      {
-        name: 'name',
-        ignore: {
-          type: 'submit'
-        }
-      },
-    ],
+  true,
+  'input': [
+    {
+      name: 'name',
+      ignore: {
+        type: 'submit'
+      }
+    },
+  ],
 ]
 ```
 
