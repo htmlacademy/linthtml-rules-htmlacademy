@@ -1,7 +1,21 @@
 # Changelog
 
 ## 1.0.13
-Excludes the `<input type="submit">` check from the [input-req-label](rules/input-req-label/README.md) rule.
+- Excludes the `<input type="submit">` check from the [input-req-label](rules/input-req-label/README.md) rule.
+- Adds `ignore` option for [tag-req-attr](rules/tag-req-attr/README.md)
+```js
+'input': [
+  {
+    name: 'name',
+    ignore: {
+      'type': 'submit'
+    }
+  },
+],
+```
+
+will not require a name attribute for `<input`> with `type="submit"`
+
 
 ## 1.0.12
 Fix `htmlacademy/attr-req-value` rule
