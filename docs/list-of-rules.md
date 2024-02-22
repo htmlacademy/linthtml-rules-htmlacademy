@@ -23,6 +23,7 @@
 | [htmlacademy/req-head-styles](../rules/req-head-styles/README.md)                   | Запрещает подключение стилей вне `<head>`                                                          |
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
 | [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
+| [htmlacademy/req-stylesheet-link](../rules/req-stylesheet-link/README.md)               | Проверяет наличие `<link rel="stylesheet" href="">` с непустым `href`                              |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)           | Требует добавление заголовка любого уровня в `<section>`                                           |
 | [htmlacademy/space-between-comments](../rules/space-between-comments/README.md)     | Проверят пробелы у комментария `<!-- Это комментарий -->`                                          |
 | [htmlacademy/tag-name-lowercase](../rules/tag-name-lowercase/README.md)             | Имена тегов должны быть строчными                                                                  |
