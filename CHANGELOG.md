@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.0.14
+Добавили новое правило [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/README.md), которое проверяет наличие тега link с атрибутом rel="stylesheet" внутри тега head.
+```json
+{
+  "htmlacademy/req-stylesheet-link": true
+}
+```
+
+```html
+<head>
+  <link rel="stylesheet" href="styles/style.css">
+</head> 
+```
+
+```html
+
 ## 1.0.13
 - Excludes the `<input type="submit">` check from the [input-req-label](rules/input-req-label/README.md) rule.
 - Adds `ignore` option for [tag-req-attr](rules/tag-req-attr/README.md)
