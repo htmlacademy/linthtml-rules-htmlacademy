@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.0.14
-Добавили новое правило [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/README.md), которое проверяет наличие тега link с атрибутом rel="stylesheet" внутри тега head.
+Added a new rule [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/README.md) that checks for a link tag with the rel="stylesheet" attribute inside the head tag.
 ```json
 {
   "htmlacademy/req-stylesheet-link": true
