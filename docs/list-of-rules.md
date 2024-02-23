@@ -21,6 +21,7 @@
 | [htmlacademy/no-px-size](../rules/no-px-size/README.md)                             | Атрибуты `width` и `height` содержат только цифры, без единиц измерения                            |
 | [htmlacademy/req-charset-utf](../rules/req-charset-utf/README.md)                   | Требует `UTF-8` для `<meta charset="">`                                                            |
 | [htmlacademy/req-head-styles](../rules/req-head-styles/README.md)                   | Запрещает подключение стилей вне `<head>`                                                          |
+| [htmlacademy/req-mailto](../rules/req-mailto/README.md)                   | Требует `mailto:` для ссылок c email-текстом                                                       |
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
 | [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
 | [htmlacademy/req-stylesheet-link](../rules/req-stylesheet-link/README.md)               | Проверяет наличие `<link rel="stylesheet" href="">` с непустым `href`                              |
