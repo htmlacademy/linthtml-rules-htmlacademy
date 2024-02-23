@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.15
+Added a new rule [htmlacademy/req-mailto](rules/req-mailto/README.md), which requires `mailto:` for email-text links.
+```json
+{
+  "htmlacademy/req-mailto": true
+}
+```
+
+```html
+<a href="mailto:example@example.com">example@example.com</a>
+```
+
 ## 1.0.14
 Added a new rule [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/README.md) that checks for a link tag with the `rel="stylesheet"` attribute inside the head tag.
 ```json
