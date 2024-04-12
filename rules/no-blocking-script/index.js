@@ -1,7 +1,7 @@
 'use strict';
 // eslint-disable-next-line camelcase
-const { is_tag_node, has_attribute } = require('@linthtml/dom-utils');
-const isAsync = (node) => has_attribute(node, 'async') || has_attribute(node, 'defer');
+const { attribute_has_value, is_tag_node, has_attribute } = require('@linthtml/dom-utils');
+const isAsync = (node) => has_attribute(node, 'async') || has_attribute(node, 'defer') || attribute_has_value(node, 'type', 'module');
 const isLastBodyElement = (node) => {
   if (node.parent.name !== 'body') {
     return false;
