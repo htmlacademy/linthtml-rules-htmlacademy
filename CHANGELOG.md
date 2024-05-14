@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.16
+Clarifies the [no-blocking-script](rules/no-blocking-script/README.md) rule for the `<script>` tag. You can now add modules to `<head>`.
+
+```html
+<html lang="ru">
+<head>
+  <script src="app.js" type="module"></script>
+</head>
+<body>…</body>
+</html>
+```
+
 ## 1.0.15
 Added a new rule [htmlacademy/req-mailto](rules/req-mailto/README.md), which requires `mailto:` for email-text links.
 ```json
