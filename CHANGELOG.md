@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.18
+Fixes `report` in the `req-source-width-height`
+
 ## 1.0.17
 Added a new rule [htmlacademy/req-source-width-height](rules/req-source-width-height/README.md) that requires the `width` and `height` attributes of `<source>`, inside `<picture>`.
 
