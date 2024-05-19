@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.0.19
+Adds a `tag-forbid-attr` rule that disallows the use of specified attributes on the specified tag.
+
+```json
+{
+  "tag-forbid-attr": [
+    true,
+    {
+      "picture": [
+        {
+          "name": "class"
+        }
+      ],
+      "body": [
+        {
+          "name": "class"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## 1.0.18
 Fixes `report` in the `req-source-width-height`
 
