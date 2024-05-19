@@ -24,6 +24,7 @@
 | [htmlacademy/req-mailto](../rules/req-mailto/README.md)                             | Требует `mailto:` для ссылок c email-текстом                                                       |
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
 | [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
+| [htmlacademy/req-source-width-height](../rules/req-source-width-height/README.md)               | Требует `width` и `height` у `<source>`                                                             |
 | [htmlacademy/req-stylesheet-link](../rules/req-stylesheet-link/README.md)           | Проверяет наличие `<link rel="stylesheet" href="">` с непустым `href`                              |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)           | Требует добавление заголовка любого уровня в `<section>`                                           |
 | [htmlacademy/space-between-comments](../rules/space-between-comments/README.md)     | Проверят пробелы у комментария `<!-- Это комментарий -->`                                          |
