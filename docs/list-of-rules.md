@@ -5,7 +5,7 @@
 | [htmlacademy/a-target-rel](../rules/a-target-rel/README.md)                         | Проверяет наличие `rel="noopener noreferrer"` у `<a target="_blank"></a>`                          |
 | [htmlacademy/aria-label-misuse](../rules/aria-label-misuse/README.md)               | Требует использование `aria-label` на определённых элементах                                       |
 | [htmlacademy/attr-delimiter](../rules/attr-delimiter/README.md)                     | Требует удалить пробел между `=` для атрибутов                                                     |
-| [htmlacademy/attr-req-value](../rules/attr-req-value/README.md)                     | Запрещает пустые атрибуты `<button class="">`, кроме тех что в `ignore: []`                        |
+| [htmlacademy/attr-req-value](../rules/attr-req-value/README.md)                     | Запрещает пустые атрибуты `""`, кроме тех что в `ignore: []`                                       |
 | [htmlacademy/attribute-allowed-values](../rules/attribute-allowed-values/README.md) | Проверяет атрибуты на наличие допустимых значений                                                  |
 | [htmlacademy/ban-url-spaces](../rules/ban-url-spaces/README.md)                     | Проверяет наличие пробелов в адресах в атрибутах `href` и `src`.                                   |
 | [htmlacademy/charset-position](../rules/charset-position/README.md)                 | Требует указывать `<meta charset="utf-8">` первым элементов в `<head>`                             |
@@ -24,7 +24,7 @@
 | [htmlacademy/req-mailto](../rules/req-mailto/README.md)                             | Требует `mailto:` для ссылок c email-текстом                                                       |
 | [htmlacademy/req-meta-viewport](../rules/req-meta-viewport/README.md)               | Проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>` |
 | [htmlacademy/req-single-styles](../rules/req-single-styles/README.md)               | Разрешает не более одного `link rel="stylesheet"` в `<head>`                                       |
-| [htmlacademy/req-source-width-height](../rules/req-source-width-height/README.md)               | Требует `width` и `height` у `<source>`                                                             |
+| [htmlacademy/req-source-width-height](../rules/req-source-width-height/README.md)               | Требует `width` и `height` у `<source>` внутри `<picture>`                                          |
 | [htmlacademy/req-stylesheet-link](../rules/req-stylesheet-link/README.md)           | Проверяет наличие `<link rel="stylesheet" href="">` с непустым `href`                              |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)           | Требует добавление заголовка любого уровня в `<section>`                                           |
 | [htmlacademy/space-between-comments](../rules/space-between-comments/README.md)     | Проверят пробелы у комментария `<!-- Это комментарий -->`                                          |
