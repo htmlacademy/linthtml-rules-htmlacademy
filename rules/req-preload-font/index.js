@@ -3,6 +3,7 @@ const { has_non_empty_attribute, is_tag_node, attribute_has_value } = require('@
 
 module.exports = {
   name: 'htmlacademy/req-preload-font',
+  // eslint-disable-next-line camelcase
   lint(node, rule_config, { report }) {
     if (is_tag_node(node) && node.name === 'head') {
       const hasRequiredPreload = node.children.some((child) =>
