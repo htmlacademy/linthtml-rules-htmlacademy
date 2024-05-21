@@ -1,11 +1,14 @@
 # Changelog
 
 ## 1.0.20
-Adds a `req-tags-presence` rule that requires the specified tags on the page.
+- Adds a `req-tags-presence` rule that requires the specified tags on the page.
+- Adds a `req-preload-font` rule that requires the `preload` value for the font.
+
 
 ```json
 {
-  "htmlacademy/req-tags-presence": [ true, ["header", "nav", "main", "section", "h1", "footer"]]
+  "htmlacademy/req-tags-presence": [ true, ["header", "nav", "main", "section", "h1", "footer"]],
+  "htmlacademy/req-preload-font": true
 }
 ```
 
