@@ -3,12 +3,14 @@
 ## 1.0.20
 - Adds a `req-tags-presence` rule that requires the specified tags on the page.
 - Adds a `req-preload-font` rule that requires the `preload` value for the font.
+- Adds a `req-webp-in-picture` rule that requires `webp` in `<picture>`
 
 
 ```json
 {
   "htmlacademy/req-tags-presence": [ true, ["header", "nav", "main", "section", "h1", "footer"]],
-  "htmlacademy/req-preload-font": true
+  "htmlacademy/req-preload-font": true,
+  "htmlacademy/req-webp-in-picture": true
 }
 ```
 
