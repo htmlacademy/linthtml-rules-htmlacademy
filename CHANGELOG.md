@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.20
+Adds a `req-tags-presence` rule that requires the specified tags on the page.
+
+```json
+{
+  "htmlacademy/req-tags-presence": [ true, ["header", "nav", "main", "section", "h1", "footer"]]
+}
+```
+
+```html
+
 ## 1.0.19
 Adds a `tag-forbid-attr` rule that disallows the use of specified attributes on the specified tag.
 
@@ -84,11 +95,11 @@ Added a new rule [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/REA
 - Excludes the `<input type="submit">` check from the [input-req-label](rules/input-req-label/README.md) rule.
 - Adds `ignore` option for [tag-req-attr](rules/tag-req-attr/README.md)
 ```js
-'input': [
+"input": [
   {
-    name: 'name',
+    name: "name",
     ignore: {
-      'type': 'submit'
+      "type": "submit"
     }
   },
 ],
@@ -118,7 +129,7 @@ The following pattern is **not** considered a problem:
 Added [htmlacademy/space-between-comments](rules/space-between-comments/README.md)
 ```js
 rules: {
-  'htmlacademy/space-between-comments': [true, 'space' | 'no-space]
+  "htmlacademy/space-between-comments": [true, "space" | "no-space]
 }
 ```
 
@@ -159,7 +170,7 @@ Adds new rule `htmlacademy/attr-req-value`: the attribute cannot be empty, excep
 
 ```js
 {
-  'htmlacademy/attr-req-value': [true, { ignore: ['alt']}]
+  "htmlacademy/attr-req-value": [true, { ignore: ["alt"]}]
 }
 ```
 
