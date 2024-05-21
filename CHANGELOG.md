@@ -9,8 +9,6 @@ Adds a `req-tags-presence` rule that requires the specified tags on the page.
 }
 ```
 
-```html
-
 ## 1.0.19
 Adds a `tag-forbid-attr` rule that disallows the use of specified attributes on the specified tag.
 
