@@ -17,6 +17,7 @@
 | [htmlacademy/input-req-label](../rules/input-req-label/README.md)                  | Требует наличие метки для поля ввода, и позволяет указать метку в `aria-label`                     |
 | [htmlacademy/link-req-content](../rules/link-req-content/README.md)                | Проверяет наличие текстового содержания у `<a>`                                                    |
 | [htmlacademy/no-blocking-script](../rules/no-blocking-script/README.md)            | Проверяет расположение скриптов в разметке                                                         |
+| [htmlacademy/no-class-in-container](../rules/no-class-in-container/README.md)            | Проверяет атрибут `class` у дочерних элементов внутри указанного контейнера                        |
 | [htmlacademy/no-double-br](../rules/no-double-br/README.md)                        | Запрещает идущие подряд двойной `<br>`                                                             |
 | [htmlacademy/no-px-size](../rules/no-px-size/README.md)                            | Атрибуты `width` и `height` содержат только цифры, без единиц измерения                            |
 | [htmlacademy/req-charset-utf](../rules/req-charset-utf/README.md)                  | Требует `UTF-8` для `<meta charset="">`                                                            |
@@ -28,7 +29,7 @@
 | [htmlacademy/req-source-width-height](../rules/req-source-width-height/README.md)              | Требует `width` и `height` у `<source>` внутри `<picture>`                                         |
 | [htmlacademy/req-stylesheet-link](../rules/req-stylesheet-link/README.md)          | Проверяет наличие `<link rel="stylesheet" href="">` с непустым `href`                              |
 | [htmlacademy/req-tags-presence](../rules/req-tags-presence/README.md)           | Требует указанные теги на странице                                                                 |
-| [htmlacademy/req-webp-in-picture](../rules/req-webp-in-picture/README.md)           | Требует `webp` в `<picture>`                                                                           |
+| [htmlacademy/req-webp-in-picture](../rules/req-webp-in-picture/README.md)           | Требует `webp` в `<picture>`                                                                       |
 | [htmlacademy/section-has-heading](../rules/section-has-heading/README.md)          | Требует добавление заголовка любого уровня в `<section>`                                           |
 | [htmlacademy/space-between-comments](../rules/space-between-comments/README.md)    | Проверят пробелы у комментария `<!-- Это комментарий -->`                                          |
 | [htmlacademy/tag-forbid-attr](../rules/tag-forbid-attr/README.md)                  | Указанные атрибуты должны отсутствовать в указанном теге                                           |
