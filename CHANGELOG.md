@@ -4,13 +4,20 @@
 - Adds a `req-tags-presence` rule that requires the specified tags on the page.
 - Adds a `req-preload-font` rule that requires the `preload` value for the font.
 - Adds a `req-webp-in-picture` rule that requires `webp` in `<picture>`
-
+- Adds a `no-class-in-container` rule that checks the `class` attribute for child elements inside the specified container.
 
 ```json
 {
   "htmlacademy/req-tags-presence": [ true, ["header", "nav", "main", "section", "h1", "footer"]],
   "htmlacademy/req-preload-font": true,
-  "htmlacademy/req-webp-in-picture": true
+  "htmlacademy/req-webp-in-picture": true,
+  "htmlacademy/no-class-in-container": [true, {
+    "containers": ["content"],
+    "ignore": {
+      "tags": ["h1", "p"],
+      "classes": ["content__title"]
+    }
+  }]
 }
 ```
 
