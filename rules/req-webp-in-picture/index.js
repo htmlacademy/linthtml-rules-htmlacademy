@@ -7,6 +7,12 @@ module.exports = {
   lint(node, rule_config, { report }) {
     if (is_tag_node(node) && node.tagName === 'picture') {
       const sourceElements = node.children.filter((child) => child.tagName === 'source');
+      const allSourcesAreSvg = sourceElements.every((source) => attribute_has_value(source, 'type', 'image/svg+xml'));
+
+      if (allSourcesAreSvg) {
+        return;
+      }
+
       const hasWebpSource = sourceElements.some((source) => attribute_has_value(source, 'type', 'image/webp'));
 
       if (!hasWebpSource) {
