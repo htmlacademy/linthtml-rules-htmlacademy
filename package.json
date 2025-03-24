@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@linthtml/dom-utils": "0.9.5",
+    "@linthtml/dom-utils": "0.10.0",
     "eslint": "8.55.0",
     "eslint-config-htmlacademy": "10.0.1"
   }
