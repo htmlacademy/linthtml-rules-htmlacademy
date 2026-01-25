@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 — ???
+
+- 
+
 ## 1.0.21
 Fixes `req-webp-in-picture` to not check `<picture>` if all `<source>` have attribute `type="image/svg+xml"`.
 
@@ -101,7 +105,7 @@ Added a new rule [htmlacademy/req-stylesheet-link](rules/req-stylesheet-link/REA
 ```html
 <head>
   <link rel="stylesheet" href="styles/style.css">
-</head> 
+</head>
 ```
 
 ## 1.0.13
@@ -124,7 +128,7 @@ will not require a name attribute for `<input`> with `type="submit"`
 ## 1.0.12
 Fix `htmlacademy/attr-req-value` rule
 
-### Exceptions 
+### Exceptions
 A single `<option>` in `<select>` may have an empty value for the `value` attribute if it is selected by default.
 
 The following pattern is **not** considered a problem:
