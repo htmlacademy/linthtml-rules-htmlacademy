@@ -1,16 +1,16 @@
 # htmlacademy/req-head-styles
 
-Собственные стили проекта должны быть подключены в `<head>`.
-Правило запрещает подключение стилей вне `<head>`.
+Project styles must be linked in `<head>`.
+This rule disallows linking styles outside of `<head>`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <body>
   <link rel="stylesheet" href="styles/main.css">
 </body>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <link rel="stylesheet" href="styles/styles.css">

@@ -1,37 +1,37 @@
 # htmlacademy/space-between-comments
 
-Это правило проверяет наличие пробелов в начале и в конце блока комментария.
+This rule checks for spaces at the beginning and end of comment blocks.
 
-## Опции
+## Options
 
 `string`: `"space"|"no-space"`
 
-## Значение `space`
-Если у комментария есть пробелы как в начале, так и в конце блока комментария, то это соответствует требованиям.
+## Value `space`
+If the comment has spaces at both the beginning and end of the comment block, it is valid.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
-<!-- Это комментарий-->
-<!--Это комментарий -->
-<!--Это комментарий-->
+<!-- This is a comment-->
+<!--This is a comment -->
+<!--This is a comment-->
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
-<!-- Это комментарий -->
+<!-- This is a comment -->
 ```
 
-## Значение `no-space`
-Если у комментария **нет** пробелов как в начале, так и в конце блока комментария, то это соответствует требованиям.
+## Value `no-space`
+If the comment has **no** spaces at either the beginning or end of the comment block, it is valid.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
-<!-- Это комментарий-->
-<!--Это комментарий -->
-<!-- Это комментарий -->
+<!-- This is a comment-->
+<!--This is a comment -->
+<!-- This is a comment -->
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
-<!--Это комментарий-->
+<!--This is a comment-->
 ```

@@ -1,8 +1,8 @@
 # htmlacademy/tag-req-attr
 
-Если установлено, указанные атрибуты должны присутствовать в указанном теге.
+When enabled, specified attributes must be present on the specified tag.
 
-Форк: https://linthtml.vercel.app/user-guide/rules/list/tag-req-attr
+Fork: https://linthtml.vercel.app/user-guide/rules/list/tag-req-attr
 
 ## true
 
@@ -14,7 +14,7 @@
         name: 'name'
       },
     ],
-    // Другие элементы...
+    // Other elements...
   },
 ]
 ```
@@ -37,7 +37,7 @@
 }
 ```
 
-Нарушениями считаются следующие модели:
+Invalid:
 
 ```html
 <img/>
@@ -51,7 +51,7 @@
 <img alt="No image">
 ```
 
-Следующие детали не считаются нарушениями:
+Valid:
 
 ```html
 <img alt="Picture of a cute cat" src="https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiHzdu5n4ThAhXOxYUKHebmDXoQjRx6BAgBEAU&url=https%3A%2F%2Fimgur.com%2Fgallery%2FHzG2YW8&psig=AOvVaw3w5Zu0oMuDZy83zsfn0NMU&ust=1552742695628256">
@@ -59,7 +59,7 @@
 
 ## ignore
 
-Поле `ignore` позволяет игнорировать атрибуты в зависимости от их значений.
+The `ignore` field allows ignoring attributes based on their values.
 
 ```json
 {
@@ -79,15 +79,15 @@
 }
 ```
 
-Нарушениями считаются следующие модели:
+Invalid:
 
 ```html
 <input name="name" type="submit">
 ```
 
-Следующие детали **не** считаются нарушениями:
+Valid:
 
-Если у элемента `input` атрибут `type` имеет значение `submit`, то атрибут `name` не обязателен.
+If an `input` element has `type` attribute with value `submit`, then the `name` attribute is not required.
 ```html
 <input type="submit" value="Submit">
 ```

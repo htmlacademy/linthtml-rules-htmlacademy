@@ -1,21 +1,20 @@
 # htmlacademy/req-charset-utf
 
-Правило проверяет наличие значение `utf-8` у `<meta charset="">`. Правило принимает значения `true` или `false`
+This rule checks that `<meta charset="">` has the value `utf-8`. Accepts `true` or `false`.
 
 ## true
-У `<meta charset="">` значение `utf-8`.
+`<meta charset="">` must have the value `utf-8`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   <meta charset="windows-1251">
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <meta charset="utf-8">
 </head>
 ```
-

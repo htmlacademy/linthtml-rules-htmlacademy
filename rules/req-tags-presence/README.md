@@ -1,10 +1,10 @@
 # htmlacademy/req-tags-presence
 
-Если установлено, указанные теги должны находится на странице. Если теги отсутствуют, правило считается нарушенным. 
+When enabled, specified tags must be present on the page. The rule is violated if any tags are missing.
 
 ## true
 
-В массив можно передать любые теги. Если хотя бы один из них отсутствует, правило считается нарушенным.
+Any tags can be passed in the array. If at least one of them is missing, the rule is violated.
 
 
 ```json
@@ -13,9 +13,9 @@
 }
 ```
 
-Нарушениями считаются следующие модели:
+Invalid:
 
-Потому что без тега `<h1>` и `<main>`.
+Missing `<h1>` and `<main>` tags:
 
 ```html
 <body>
@@ -25,7 +25,7 @@
 </body>
 ```
 
-Потому что без тега `<h1>`.
+Missing `<h1>` tag:
 
 ```html
 <body>
@@ -35,7 +35,7 @@
 </body>
 ```
 
-Следующие детали **не** считаются нарушениями:
+Valid:
 
 ```html
 <body>

@@ -1,9 +1,9 @@
 # htmlacademy/req-single-styles
 
-Собственные стили проекта должны быть подключены одним файлом в `<head>`.
-Правило разрешает не более одного `link rel="stylesheet"` в `<head>`.
+Project styles must be linked as a single file in `<head>`.
+This rule allows no more than one `link rel="stylesheet"` in `<head>`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   <link rel="stylesheet" href="styles/header.css">
@@ -12,7 +12,7 @@
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <link rel="stylesheet" href="styles/styles.css">

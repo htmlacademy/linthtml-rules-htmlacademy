@@ -1,17 +1,17 @@
 # htmlacademy/form-action-attribute
 
-Правило проверяет расположение атрибута `action` у тега `<form>`. Правило принимает значения `true` или `false`
+This rule checks the `action` attribute on `<form>` elements. Accepts `true` or `false`.
 
 ## true
-У `<form>` должен быть заполненный атрибут `action`.
+`<form>` must have a non-empty `action` attribute.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <form action=""></form>
 <form></form>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <form action="https://echo.htmlacademy.ru"></form>
 ```

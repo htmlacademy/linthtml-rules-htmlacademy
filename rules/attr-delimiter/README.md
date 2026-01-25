@@ -1,19 +1,17 @@
 # htmlacademy/attr-delimiter
 
-Это правило запрещает использование пробелов, разделяющих ключ атрибута и значение, то есть до или после символа `=`. Технически пробелы разрешены спецификацией HTML5.
-Использование пробелов в этом контексте может быть признаком опечатки.
+This rule disallows spaces between attribute key and value, i.e., before or after the `=` character. While spaces are technically allowed by the HTML5 specification, using them in this context may indicate a typo.
 
 ## true
-Ключ атрибута и значение не разделены пробелами
+Attribute key and value must not be separated by spaces.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <input name ="my-field">
 <input name= "my-field">
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <input name="my-field">
 ```
-

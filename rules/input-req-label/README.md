@@ -1,14 +1,14 @@
 # htmlacademy/input-req-label
 
-Форк: https://linthtml.vercel.app/user-guide/rules/list/input-req-label
+Fork: https://linthtml.vercel.app/user-guide/rules/list/input-req-label
 
-Правило требует наличие метки для поля ввода, и позволяет указать метку в `aria-label`.
+This rule requires a label for input fields, and allows specifying the label via `aria-label`.
 
 ## true
-Если включён, то метки не могут быть пустыми.
+When enabled, labels cannot be empty.
 
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <input type="text" value="great">
 
@@ -20,7 +20,7 @@
 </section>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <div>

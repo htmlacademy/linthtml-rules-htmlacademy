@@ -1,15 +1,15 @@
 # htmlacademy/link-req-content
 
-Правило проверяет наличие текстового содержания у ссылок. [WCAG 2.1](https://www.w3.org/WAI/WCAG21/Techniques/html/H30) требует, чтобы каждая ссылка `<a>` содержала текст, описывающий назначение ссылки, используя либо обычный текст, либо `<img>` с установленным атрибутом `alt`.
+This rule checks that links have text content. [WCAG 2.1](https://www.w3.org/WAI/WCAG21/Techniques/html/H30) requires that every `<a>` link contains text describing the link's purpose, using either plain text or an `<img>` with an `alt` attribute set.
 
-Правило распознаёт следующие шаблоны:
-- Текст (не пробелы) внутри ссылки
-- Изображения с непустым альтернативным текстом
-- `aria-label` либо на ссылке, либо по крайней мере на одном потомке.
+The rule recognizes the following patterns:
+- Text (non-whitespace) inside the link
+- Images with non-empty alt text
+- `aria-label` either on the link or on at least one descendant.
 
 ## true
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <a>
   <img src="images/cat.gif" width="100" height="1000">
@@ -20,7 +20,7 @@
 </a>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <a href="#">
   lorem ipsum

@@ -1,10 +1,10 @@
 # htmlacademy/req-webp-in-picture
 
-Правило проверяет наличие webp изображений в теге `<picture>`. Не проверяет `<picture>` если все `<source>` имеют атрибут `type="image/svg+xml"`.
+This rule checks for webp or avif images in `<picture>` elements. Skips `<picture>` if all `<source>` elements have `type="image/svg+xml"`.
 
 ## true
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 
 ```html
 <picture>
@@ -19,7 +19,7 @@
 </picture>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <picture>
@@ -34,6 +34,14 @@
 ```html
 <picture>
   <source width="400" height="200" srcset="image.webp" type="image/webp">
+  <source width="400" height="200" srcset="image.jpg" type="image/jpeg">
+  <img width="400" height="200" src="image.png" alt="Example image">
+</picture>
+```
+
+```html
+<picture>
+  <source width="400" height="200" srcset="image.avif" type="image/avif">
   <source width="400" height="200" srcset="image.jpg" type="image/jpeg">
   <img width="400" height="200" src="image.png" alt="Example image">
 </picture>

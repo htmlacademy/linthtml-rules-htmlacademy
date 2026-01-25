@@ -1,17 +1,17 @@
 # htmlacademy/no-px-size
 
-Правило проверяет значение атрибутов `width` и `height` у элементов `<img>` и `<svg>`. Правило принимает значения `true` или `false`.
+This rule checks the values of `width` and `height` attributes on `<img>` and `<svg>` elements. Accepts `true` or `false`.
 
 ## true
-Атрибуты `width` и `height` содержат только цифры, без единиц измерения.
+The `width` and `height` attributes must contain only numbers, without units.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 
 ```html
 <img width="100px" height="100%" src="images/image.jpg">
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <img width="500" height="300" src="images/image.jpg" alt="">
 

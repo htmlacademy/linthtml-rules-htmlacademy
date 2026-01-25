@@ -1,9 +1,9 @@
 # htmlacademy/req-preload-font
 
-Правило проверяет наличие значение `preload` для шрифта.
+This rule checks for font `preload` declarations.
 
 ## true
-В `<head>` должна быть указана предзагрузка шрифтов 
+Font preloading must be specified in `<head>`.
 
 ```html
 <head>
@@ -11,30 +11,29 @@
 </head>
 ```
 
-`*` - тип шрифта
-`path/to/font.font` - путь до шрифта
+`*` - font type
+`path/to/font.font` - path to font
 
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 
-Без `preload`:
+Without `preload`:
 ```html
 <head>
-  
+
 </head>
 ```
 
-С пустым или отсутствующим href:
+With empty or missing href:
 ```html
 <head>
   <link rel="preload" href="" type="font/woff2" as="font">
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <link rel="preload" href="path/to/font.woff2" as="font" type="font/woff2">
 </head>
 ```
-

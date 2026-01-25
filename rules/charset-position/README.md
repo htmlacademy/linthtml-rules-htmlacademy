@@ -1,11 +1,11 @@
 # htmlacademy/charset-position
 
-Правило позиционирования `<meta charset="">` в `<head>`. Правило принимает значения `true` или `false`
+This rule validates the position of `<meta charset="">` in `<head>`. Accepts `true` or `false`.
 
-## true 
-`<meta charset="">` указан первым непосредственным ребёнком в `<head>`.
+## true
+`<meta charset="">` must be the first direct child in `<head>`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,11 +25,10 @@
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <meta charset="utf-8">
   <title>Title</title>
 </head>
 ```
-
