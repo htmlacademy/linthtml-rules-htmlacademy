@@ -1,8 +1,6 @@
-/node_modules
-yarn.lock
+node_modules/
 .DS_Store
 Thumbs.db
-.idea
+.idea/
 *.sublime*
-*.lock
-.publish
+.vscode/
