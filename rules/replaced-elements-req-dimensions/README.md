@@ -1,11 +1,11 @@
-# htmlacademy/img-svg-req-dimensions
+# htmlacademy/replaced-elements-req-dimensions
 
-Правило проверяет наличие атрибутов `width` и `height` у элементов `<img>` и `<svg>`. Правило принимает значения `true` или `false`.
+This rule checks for the presence of `width` and `height` attributes on `<img>`, `<svg>`, `<video>`, and `<iframe>` elements. Accepts `true` or `false`.
 
 ## true
-Элементы `<img>` и `<svg>` содержат оба атрибута `width` и `height`.
+`<img>`, `<svg>`, `<video>`, and `<iframe>` elements must have both `width` and `height` attributes.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 
 ```html
 <img src="images/image.jpg">
@@ -35,11 +35,25 @@
 </svg>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+```html
+<video src="video.mp4"></video>
+<video width="640" src="video.mp4"></video>
+```
+
+```html
+<iframe src="https://example.com"></iframe>
+<iframe width="560" src="https://www.youtube.com/embed/example"></iframe>
+```
+
+Valid:
 ```html
 <img src="images/image.jpg" width="500" height="300" alt="">
 
 <svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
   <rect x="0" y="0"></rect>
 </svg>
+
+<video width="640" height="360" src="video.mp4"></video>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/example"></iframe>
 ```

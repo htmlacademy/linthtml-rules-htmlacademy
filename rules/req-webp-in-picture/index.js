@@ -14,11 +14,12 @@ module.exports = {
       }
 
       const hasWebpSource = sourceElements.some((source) => attribute_has_value(source, 'type', 'image/webp'));
+      const hasAvifSource = sourceElements.some((source) => attribute_has_value(source, 'type', 'image/avif'));
 
-      if (!hasWebpSource) {
+      if (!hasWebpSource && !hasAvifSource) {
         report({
           position: node.loc,
-          message: 'Element "picture" must contain a "source" child with a "type" attribute containing "webp".'
+          message: 'Element "picture" must contain a "source" child with a "type" attribute containing "webp" or "avif".'
         });
       }
     }
