@@ -2,7 +2,12 @@
 
 ## 2.0.0 — ???
 
-- 
+### Breaking Changes
+- Renames `htmlacademy/img-svg-req-dimensions` → `htmlacademy/replaced-elements-req-dimensions`. Now also checks `<video>` and `<iframe>` for `width` and `height` attributes.
+
+### Changed
+- `htmlacademy/a-target-rel`: Now requires only `rel="noopener"` (removed `noreferrer` requirement).
+- `htmlacademy/req-webp-in-picture`: Now accepts `image/avif` as alternative to `image/webp`.
 
 ## 1.0.21
 Fixes `req-webp-in-picture` to not check `<picture>` if all `<source>` have attribute `type="image/svg+xml"`.
