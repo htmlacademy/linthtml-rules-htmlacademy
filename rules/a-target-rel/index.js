@@ -3,7 +3,7 @@
 const { is_tag_node, attribute_has_value } = require('@linthtml/dom-utils');
 const requiredAttributes = {
   // todo вынести в конфиг правила
-  rel: ['noreferrer', 'noopener']
+  rel: ['noopener']
 };
 
 const isEveryValuePresent = (node, attr, values) => values.every((val) => attribute_has_value(node, attr, new RegExp(val)));
