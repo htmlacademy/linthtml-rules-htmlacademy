@@ -1,6 +1,6 @@
 # htmlacademy/no-class-in-container
 
-Правило проверяет наличие атрибута `class` у дочерних элементов внутри указанного контейнера.
+This rule checks for `class` attributes on child elements inside a specified container.
 
 ```json
 {
@@ -15,7 +15,7 @@
 ```
 
 ## true
-Если указано `true`, то необходимо передать значение `class` контейнера. В `containers` можно передавать несколько классов, тогда будут проверяться несколько контейнеров.
+When set to `true`, you must provide the container's `class` value. Multiple classes can be passed to `containers` to check multiple containers.
 
 ```json
 {
@@ -25,16 +25,16 @@
 }
 ```
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <div class="content">
   <h1 class="content__title">title</h1>
 </div>
 ```
 
-Так как на дочернем элементе `<h1>` есть `class`.
+Because the child element `<h1>` has a `class`.
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <div class="content">
   <h1>title</h1>
@@ -47,10 +47,10 @@
 ```
 
 ### ignore
-`ignore` принимает теги и классы, которые нужно игнорировать внутри контейнера.
+`ignore` accepts tags and classes to ignore inside the container.
 
 #### ignore.tags
-Игнорирует указанные теги внутри контейнера.
+Ignores specified tags inside the container.
 
 ```json
 {
@@ -63,7 +63,7 @@
 }
 ```
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <div class="content">
   <h1 class="content__title">title</h1>
@@ -71,9 +71,9 @@
 </div>
 ```
 
-так как у `<p>` есть атрибут `class`.
+because `<p>` has a `class` attribute.
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <div class="content">
@@ -89,7 +89,7 @@
 ```
 
 #### ignore.classes
-Игнорирует элементы с указанными классами внутри контейнера.
+Ignores elements with specified classes inside the container.
 
 ```json
 {
@@ -102,7 +102,7 @@
 }
 ```
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <div class="content">
   <h1 class="content__title">title</h1>
@@ -111,9 +111,9 @@
 </div>
 ```
 
-Так как есть `content__subtitle`.
+Because `content__subtitle` is present.
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <div class="content">

@@ -1,14 +1,14 @@
 # htmlacademy/ban-url-spaces
-Правило проверяет наличие пробелов в адресах в атрибутах `href` и `src`.
+This rule checks for spaces in URLs within `href` and `src` attributes.
 
-Хотя браузер может экранировать символы, пробелы в адресе запрещены спецификацией.
+While browsers may escape characters, spaces in URLs are forbidden by the specification.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <a href="https://htmlacademy.pro?query=some long param">Link</a>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <a href="https://htmlacademy.pro?query=some%20long%20param">Link</a>

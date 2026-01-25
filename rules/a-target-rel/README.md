@@ -1,10 +1,10 @@
 # htmlacademy/a-target-rel
-Правило проверяет наличие атрибута `rel` со значениями `noreferrer` и `noopener` у ссылок` <a>` с атрибутом `target="_blank"`. Правило принимает значения true или false.
+This rule checks that `<a>` links with `target="_blank"` have a `rel` attribute with both `noreferrer` and `noopener` values. Accepts `true` or `false`.
 
 ## true
-Ссылки `<a>` с атрибутом `target="_blank"` содержат атрибут `rel` со значениями `noreferrer` и `noopener`.
+Links `<a>` with `target="_blank"` must have a `rel` attribute with both `noreferrer` and `noopener` values.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <a href="https://htmlacademy.pro" target="_blank">Link</a>
 
@@ -13,7 +13,7 @@
 <a href="https://htmlacademy.pro" target="_blank" rel="noopener">Link</a>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <a href="https://htmlacademy.pro" target="_blank" rel="noreferrer noopener">Link</a>
 

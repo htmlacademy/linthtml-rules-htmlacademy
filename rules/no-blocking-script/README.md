@@ -1,13 +1,13 @@
 # htmlacademy/no-blocking-script
 
-Правило проверяет расположение скриптов в разметке. Правило принимает значения `true` или `false`.
+This rule checks the placement of scripts in markup. Accepts `true` or `false`.
 
 ## true
-Скрипты должны быть подключены в самом низу страницы, чтобы при её загрузке не блокировать отображение содержимого.
+Scripts should be placed at the bottom of the page to avoid blocking content rendering during page load.
 
-Если скрипт не блокирующий (`defer`, `async` или `type="module"`), то можно в `<head>`.
+If a script is non-blocking (`defer`, `async`, or `type="module"`), it can be placed in `<head>`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <html lang="ru">
 <head>
@@ -17,12 +17,12 @@
 </html>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <html lang="ru">
 <head>…</head>
 <body>
-<!-- Содержимое страницы -->
+<!-- Page content -->
 <script src="app.js"></script>
 </body>
 </html>

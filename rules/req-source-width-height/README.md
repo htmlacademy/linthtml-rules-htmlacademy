@@ -1,12 +1,12 @@
 # htmlacademy/req-source-width-height
 
-Правило требует наличие атрибутов `width` и `height` у `<source>`, находящихся внутри `<piture>`.
+This rule requires `width` and `height` attributes on `<source>` elements inside `<picture>`.
 
 ## true
-Если включён, `<source>` без атрибутов `width` и `height` считаются проблемой.
+When enabled, `<source>` elements without `width` and `height` attributes are considered invalid.
 
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <picture>
   <source srcset="images/image-tablet.jpg" media="(min-width: 768px)">
@@ -14,7 +14,7 @@
 </picture>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <picture>

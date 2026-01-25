@@ -1,6 +1,6 @@
 # htmlacademy/tag-forbid-attr
 
-Если установлено, указанные атрибуты должны отсутствовать в указанном теге.
+When enabled, specified attributes must be absent from the specified tag.
 
 ## true
 
@@ -24,7 +24,7 @@
 }
 ```
 
-Нарушениями считаются следующие модели:
+Invalid:
 
 ```html
 <body class="page__body">
@@ -37,7 +37,7 @@
 </picture>
 ```
 
-Следующие детали **не** считаются нарушениями:
+Valid:
 
 ```html
 <body>

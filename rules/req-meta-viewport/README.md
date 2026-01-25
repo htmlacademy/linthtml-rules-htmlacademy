@@ -1,21 +1,20 @@
 # htmlacademy/req-meta-viewport
 
-Правило проверяет наличие `<meta name="viewport" content="width=device-width,initial-scale=1">` в `<head>`. Правило принимает значения `true` или `false`
+This rule checks for the presence of `<meta name="viewport" content="width=device-width,initial-scale=1">` in `<head>`. Accepts `true` or `false`.
 
 ## true
-В `<head>` находится `<meta name="viewport" content="width=device-width,initial-scale=1">`.
+`<head>` must contain `<meta name="viewport" content="width=device-width,initial-scale=1">`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   ...
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 ```
-

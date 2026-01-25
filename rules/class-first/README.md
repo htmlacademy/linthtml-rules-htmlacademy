@@ -1,21 +1,20 @@
 # htmlacademy/class-first
 
-Правило проверяет расположение атрибута `class` у тега. Правило принимает значения `true` или `false`
+This rule checks the position of the `class` attribute on elements. Accepts `true` or `false`.
 
 ## true
-Атрибут `class` должен быть указан первым.
+The `class` attribute must be listed first.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <a href="" class="link"></a>
 <input type="text" class="field">
 <div data-attr="test" class="products"></div>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <a class="link" href=""></a>
 <input class="field" type="text">
 <div class="products" data-attr="test"></div>
 ```
-

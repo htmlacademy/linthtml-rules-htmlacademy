@@ -1,18 +1,18 @@
 # htmlacademy/section-has-heading
 
-Правило проверяет наличие заголовка любого уровня h1-h6 у `<section>`. Правило принимает значения `true` или `false`
+This rule checks that `<section>` elements have a heading (h1-h6). Accepts `true` or `false`.
 
 ## true
-У `<section>` есть дочерний заголовок любого уровня h1-h6.
+`<section>` must have a child heading at any level (h1-h6).
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <section>
   ...
 </section>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
  <section>
   <h2>title</h2>
@@ -25,4 +25,4 @@
 </section>
 ```
 
-Вложенность заголовка(h1-h6) может быть любой.
+The heading (h1-h6) can be nested at any level.

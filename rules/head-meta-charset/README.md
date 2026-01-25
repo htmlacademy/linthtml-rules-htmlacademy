@@ -1,18 +1,18 @@
 # htmlacademy/head-meta-charset
 
-Правило проверяет наличие `<meta charset="">` в `<head>`. Правило принимает значения `true` или `false`
+This rule checks for the presence of `<meta charset="">` in `<head>`. Accepts `true` or `false`.
 
 ## true
-В `<head>` находится `<meta charset="">`.
+`<head>` must contain `<meta charset="">`.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   ...
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <meta charset="windows-1251">
@@ -22,4 +22,3 @@
   <meta charset="utf-8">
 </head>
 ```
-

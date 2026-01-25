@@ -1,5 +1,5 @@
 # htmlacademy/attribute-allowed-values
-Проверяет атрибуты на наличие допустимых значений. Перечисляемые строковые значения сопоставляются без учёта регистра.
+Validates attributes against allowed values. Enumerated string values are matched case-insensitively.
 
 
 ```js
@@ -18,13 +18,13 @@
 }
 ```
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 
 ```html
 <input type="foobar">
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 
 ```html
 <input type="text">

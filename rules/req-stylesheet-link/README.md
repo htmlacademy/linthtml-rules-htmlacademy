@@ -1,8 +1,8 @@
 # htmlacademy/req-stylesheet-link
 
-В `<head>` должны быть подключён файл стилей. Атрибут `href` не должен быть пустым.
+A stylesheet must be linked in `<head>`. The `href` attribute must not be empty.
 
-Проблемными считаются следующие шаблоны:
+Invalid:
 ```html
 <head>
   <link rel="stylesheet" href="">
@@ -17,7 +17,7 @@
 </head>
 ```
 
-Следующие шаблоны **не** считаются проблемами:
+Valid:
 ```html
 <head>
   <link rel="stylesheet" href="styles/styles.css">
