@@ -1,15 +1,19 @@
-# LintHTML Rules for HTML Academy CODEGUIDE
+# LintHTML Rules for HTML Academy Codeguide
 
 [![npm version](https://img.shields.io/npm/v/linthtml-rules-htmlacademy.svg)](https://www.npmjs.com/package/linthtml-rules-htmlacademy)
 [![test](https://github.com/htmlacademy/linthtml-rules-htmlacademy/actions/workflows/test.yml/badge.svg)](https://github.com/htmlacademy/linthtml-rules-htmlacademy/actions/workflows/test.yml)
 [![license](https://img.shields.io/npm/l/linthtml-rules-htmlacademy.svg)](https://github.com/htmlacademy/linthtml-rules-htmlacademy/blob/main/LICENSE)
 
-Custom LintHTML rules by [HTML Academy](https://htmlacademy.ru) for validating HTML markup according to the [HTML Academy Codeguide](https://codeguide.academy).
+Custom [LintHTML](https://linthtml.vercel.app) rules for HTML markup validation according to [HTML Academy Codeguide](https://codeguide.academy).
+
+## Requirements
+
+- Node.js >= 24
 
 ## Installation
 
 ```bash
-npm install linthtml-rules-htmlacademy --save-dev
+npm install -D linthtml-rules-htmlacademy
 ```
 
 ## Usage
