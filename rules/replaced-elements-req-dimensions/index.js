@@ -1,17 +1,15 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { is_tag_node, has_non_empty_attribute } = require('@linthtml/dom-utils');
+import {is_tag_node, has_non_empty_attribute} from '@linthtml/dom-utils';
 
-const REPLACED_ELEMENTS = ['img', 'svg', 'video', 'iframe'];
+const REPLACED_ELEMENTS = new Set(['img', 'svg', 'video', 'iframe']);
 
-module.exports = {
+export default {
   name: 'htmlacademy/replaced-elements-req-dimensions',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
-    if (is_tag_node(node) && REPLACED_ELEMENTS.includes(node.name)) {
+
+  lint(node, rule_config, {report}) {
+    if (is_tag_node(node) && REPLACED_ELEMENTS.has(node.name)) {
       const requiredAttributes = ['width', 'height'];
       const missingAttributes = requiredAttributes.filter((attribute) =>
-        !has_non_empty_attribute(node, attribute)
+        !has_non_empty_attribute(node, attribute),
       );
 
       if (missingAttributes.length > 0) {

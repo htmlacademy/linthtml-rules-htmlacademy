@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>input-name-unique · error</title>
+</head>
+<body>
+
+  <!-- Two non-radio inputs with the same name -->
+  <form action="/api">
+    <input type="text" name="email">
+    <input type="hidden" name="email"> <!-- error -->
+    <button type="submit">Отправить</button>
+  </form>
+
+  <!-- Three non-radio inputs with the same name: two errors -->
+  <form action="/api">
+    <input type="text" name="query">
+    <input type="text" name="query"> <!-- error -->
+    <input type="text" name="query"> <!-- error -->
+    <button type="submit">Искать</button>
+  </form>
+
+  <!-- Radio mixed with non-radio: error on non-radio duplicate -->
+  <form action="/api">
+    <input type="radio" name="color" value="red"> Red
+    <input type="text" name="color"> <!-- error -->
+    <button type="submit">Отправить</button>
+  </form>
+
+</body>
+</html>

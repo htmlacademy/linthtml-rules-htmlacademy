@@ -1,6 +1,4 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { is_tag_node } = require('@linthtml/dom-utils');
+import {is_tag_node} from '@linthtml/dom-utils';
 
 function checkPrevNode(node) {
   if (!node.prev) {
@@ -15,10 +13,10 @@ function checkPrevNode(node) {
   return checkPrevNode(node.prev);
 }
 
-module.exports = {
+export default {
   name: 'htmlacademy/no-double-br',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
+
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node) === false || node.name !== 'br') {
       return;
     }
@@ -28,5 +26,5 @@ module.exports = {
         message: 'do not use combined <br> tags',
       });
     }
-  }
+  },
 };

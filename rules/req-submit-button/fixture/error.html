@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>req-submit-button · error</title>
+</head>
+<body>
+  <form action="/api">
+    <input type="text" name="name">
+  </form>
+
+  <form action="/api">
+    <button type="reset">Clear</button>
+  </form>
+
+  <form action="/api">
+    <button type="button">Click</button>
+  </form>
+
+  <form id="other" action="/api">
+    <input type="text" name="name">
+  </form>
+  <button form="different" type="submit">Submit to a different form</button>
+</body>
+</html>

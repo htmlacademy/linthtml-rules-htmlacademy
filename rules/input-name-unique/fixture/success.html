@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>input-name-unique · success</title>
+</head>
+<body>
+
+  <!-- Radio group: same name is intentional -->
+  <form action="/api">
+    <input type="radio" name="size" value="s"> S
+    <input type="radio" name="size" value="m"> M
+    <input type="radio" name="size" value="l"> L
+    <button type="submit">Отправить</button>
+  </form>
+
+  <!-- All unique names -->
+  <form action="/api">
+    <input type="text" name="first-name">
+    <input type="text" name="last-name">
+    <input type="email" name="email">
+    <button type="submit">Отправить</button>
+  </form>
+
+  <!-- Same name in different forms — not a violation -->
+  <form id="form-a" action="/api">
+    <input type="text" name="query">
+    <button type="submit">Искать</button>
+  </form>
+  <form id="form-b" action="/api">
+    <input type="text" name="query">
+    <button type="submit">Искать</button>
+  </form>
+
+  <!-- Input without name — ignored -->
+  <form action="/api">
+    <input type="text">
+    <input type="text">
+    <button type="submit">Отправить</button>
+  </form>
+
+  <!-- Input outside any form — ignored -->
+  <input type="text" name="standalone">
+  <input type="text" name="standalone">
+
+</body>
+</html>

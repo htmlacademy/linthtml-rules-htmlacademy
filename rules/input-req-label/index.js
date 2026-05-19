@@ -1,6 +1,5 @@
-'use strict';
-/* eslint-disable camelcase */
-const { is_tag_node, attribute_value, attribute_has_value, has_non_empty_attribute } = require('@linthtml/dom-utils');
+
+import {is_tag_node, attribute_value, attribute_has_value, has_non_empty_attribute} from '@linthtml/dom-utils';
 
 class Issue {
   code;
@@ -20,11 +19,11 @@ class Issue {
   }
 }
 
-module.exports = {
+export default {
   name: 'htmlacademy/input-req-label',
   labels: {},
   inputsInfo: [],
-  lint(node, rule_config, { report }) {
+  lint(node, rule_config, {report}) {
     if (!is_tag_node(node) || !['input', 'label'].includes(node.name)) {
       return;
     }
@@ -74,10 +73,10 @@ module.exports = {
     const {
       inputsInfo, labels,
     } = this;
-    inputsInfo.forEach(({ id, loc }) => {
+    inputsInfo.forEach(({id, loc}) => {
       if (!labels[id]) {
-        issues.push(new Issue('input-req-label', loc, {
-          code: 'E033', rule: 'input-req-label', data: {
+        issues.push(new Issue('htmlacademy/input-req-label', loc, {
+          code: 'E033', rule: 'htmlacademy/input-req-label', data: {
             idValue: id,
           },
         }));
@@ -86,11 +85,13 @@ module.exports = {
 
     // wipe previous table
     for (const key in this.labels) {
-      delete this.labels[key];
+      if (Object.hasOwn(this.labels, key)) {
+        delete this.labels[key];
+      }
     }
     this.inputsInfo.length = 0;
 
     return issues;
   },
 };
-/* eslint-enable camelcase */
+

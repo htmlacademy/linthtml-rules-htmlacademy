@@ -1,12 +1,10 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { is_tag_node } = require('@linthtml/dom-utils');
+import {is_tag_node} from '@linthtml/dom-utils';
 
-module.exports = {
+export default {
   name: 'htmlacademy/head-meta-charset',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
-    // eslint-disable-next-line camelcase
+
+  lint(node, rule_config, {report}) {
+
     if (is_tag_node(node) && node.name === 'head') {
       const metaElements = node.children.filter((child) => child.name === 'meta');
       const hasCharset = metaElements.some((meta) => meta.attributes.some((attribute) => attribute.name.chars === 'charset'));
@@ -17,5 +15,5 @@ module.exports = {
         });
       }
     }
-  }
+  },
 };

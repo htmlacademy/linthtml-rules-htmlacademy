@@ -1,14 +1,12 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { is_tag_node, attribute_has_value } = require('@linthtml/dom-utils');
+import {is_tag_node, attribute_has_value} from '@linthtml/dom-utils';
 
-module.exports = {
+export default {
   name: 'htmlacademy/req-single-styles',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
+
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node) && node.name === 'head') {
       const styles = node.children.filter((child) =>
-        child.name === 'link' && attribute_has_value(child, 'rel', 'stylesheet')
+        child.name === 'link' && attribute_has_value(child, 'rel', 'stylesheet'),
       );
       if (styles.length > 1) {
         styles.slice(1).forEach((link) => {
@@ -19,5 +17,5 @@ module.exports = {
         });
       }
     }
-  }
+  },
 };
