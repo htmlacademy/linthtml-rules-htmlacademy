@@ -1,24 +1,26 @@
 # htmlacademy/tag-forbid-attr
 
-When enabled, specified attributes must be absent from the specified tag.
+When enabled, specified attributes (optionally restricted by value) must be absent from the specified tag.
 
-## true
+## Configuration
+
+Each entry under a tag is an object `{name, value?}`:
+
+- `name` — attribute name to forbid.
+- `value` — optional restriction:
+  - omitted → the attribute is forbidden regardless of value,
+  - string → the attribute is forbidden only when its value equals the string,
+  - `RegExp` → the attribute is forbidden when its value matches the pattern.
 
 ```json
 {
   "tag-forbid-attr": [
     true,
     {
-      "picture": [
-        {
-          "name": "class"
-        }
-      ],
-      "body": [
-        {
-          "name": "class"
-        }
-      ]
+      "body": [{"name": "class"}],
+      "picture": [{"name": "class"}],
+      "link": [{"name": "type", "value": "text/css"}],
+      "script": [{"name": "type", "value": "text/javascript"}]
     }
   ]
 }
@@ -27,26 +29,18 @@ When enabled, specified attributes must be absent from the specified tag.
 Invalid:
 
 ```html
-<body class="page__body">
-</body>
-```
-
-```html
-<picture class="product__image">
-  <img width="200" height="68" src="" alt="">
-</picture>
+<body class="page"></body>
+<picture class="hero"><img src="" alt=""></picture>
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="app.js" type="text/javascript"></script>
 ```
 
 Valid:
 
 ```html
-<body>
-
-</body>
-```
-
-```html
-<picture>
-  <img class="product__image" width="200" height="68" src="" alt="">
-</picture>
+<body></body>
+<picture><img class="hero" src="" alt=""></picture>
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+<script src="app.js" type="module"></script>
 ```

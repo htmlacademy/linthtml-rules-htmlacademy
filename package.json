@@ -2,30 +2,45 @@
   "name": "linthtml-rules-htmlacademy",
   "version": "2.0.0",
   "description": "LintHTML Rules for HTML Academy CODEGUIDE",
-  "license": "MIT",
-  "engines": {
-    "node": ">=24"
-  },
-  "author": "HTML Academy <mail@htmlacademy.dev>",
-  "repository": "htmlacademy/linthtml-rules-htmlacademy",
   "keywords": [
-    "linthtml",
-    "rules",
-    "htmlacademy",
     "codeguide",
-    "linter"
+    "htmlacademy",
+    "linter",
+    "linthtml",
+    "rules"
   ],
-  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "HTML Academy",
+    "email": "mail@htmlacademy.dev",
+    "url": "https://htmlacademy.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htmlacademy/linthtml-rules-htmlacademy.git"
+  },
   "files": [
     "index.js",
     "rules"
   ],
+  "type": "module",
+  "exports": "./index.js",
   "scripts": {
-    "test": "eslint index.js rules"
+    "test": "npm run test:lint && npm run test:invalid",
+    "test:lint": "eslint .",
+    "test:invalid": "node --test \"test/invalid/**/*.test.js\""
   },
   "devDependencies": {
     "@linthtml/dom-utils": "^0.10.0",
-    "eslint": "^10.2.0",
-    "eslint-config-htmlacademy": "^11.0.0"
+    "@linthtml/linthtml": "^0.10.2",
+    "eslint": "^10.4.0",
+    "eslint-config-htmlacademy": "^11.0.0",
+    "globals": "^17.6.0"
+  },
+  "peerDependencies": {
+    "@linthtml/linthtml": ">=0.10.0"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }

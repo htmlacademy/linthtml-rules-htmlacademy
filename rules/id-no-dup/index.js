@@ -1,11 +1,10 @@
-'use strict';
-/* eslint-disable camelcase */
-const { is_tag_node, attribute_value, has_non_empty_attribute } = require('@linthtml/dom-utils');
 
-module.exports = {
+import {is_tag_node, attribute_value, has_non_empty_attribute} from '@linthtml/dom-utils';
+
+export default {
   name: 'htmlacademy/id-no-dup',
   idMap: new Map(),
-  lint(node, rule_config, { report }) {
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node) && has_non_empty_attribute(node, 'id')) {
       const id = attribute_value(node, 'id');
       if (/^¤+$/.test(id.chars)) {
@@ -21,9 +20,9 @@ module.exports = {
             data: {
               id: id.chars,
               line: saved_id.loc.start.line,
-              column: saved_id.loc.start.column
-            }
-          }
+              column: saved_id.loc.start.column,
+            },
+          },
         });
       }
       // if we haven't seen the id before, remember it
@@ -34,6 +33,6 @@ module.exports = {
     // wipe previous table
     this.idMap.clear();
     return [];
-  }
+  },
 };
-/* eslint-enable camelcase */
+

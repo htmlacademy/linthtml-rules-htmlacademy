@@ -1,5 +1,4 @@
-'use strict';
-const { is_tag_node, has_attribute } = require('@linthtml/dom-utils');
+import {is_tag_node, has_attribute} from '@linthtml/dom-utils';
 
 const checkChildNodes = (node, report, container, ignore) => {
   node.children.forEach((child) => {
@@ -20,7 +19,7 @@ const checkChildNodes = (node, report, container, ignore) => {
         }
         report({
           position: child.loc,
-          message: `Element inside the specified container '${container}' should not have a class attribute`
+          message: `Element inside the specified container '${container}' should not have a class attribute`,
         });
       }
     }
@@ -30,18 +29,18 @@ const checkChildNodes = (node, report, container, ignore) => {
   });
 };
 
-module.exports = {
+export default {
   name: 'htmlacademy/no-class-in-container',
-  lint(node, { containers, ignore = {} }, { report }) {
+  lint(node, {containers, ignore = {}}, {report}) {
     if (is_tag_node(node) && has_attribute(node, 'class')) {
       node.attributes.forEach((attribute) => {
-        const classList = attribute.value.chars.split(' ');
+        const classList = new Set(attribute.value.chars.split(' '));
         containers.forEach((container) => {
-          if (classList.includes(container)) {
+          if (classList.has(container)) {
             checkChildNodes(node, report, container, ignore);
           }
         });
       });
     }
-  }
+  },
 };

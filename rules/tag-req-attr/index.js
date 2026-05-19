@@ -1,9 +1,7 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { is_tag_node, has_non_empty_attribute, has_attribute, attribute_value } = require('@linthtml/dom-utils');
+import {is_tag_node, has_non_empty_attribute, has_attribute, attribute_value} from '@linthtml/dom-utils';
 const checkAttributes = (node, requiredAttributes, report) => {
-  requiredAttributes.forEach(({ name, allowEmpty, ignore }) => {
-    allowEmpty = typeof allowEmpty === 'undefined' ? false : allowEmpty;
+  requiredAttributes.forEach(({name, allowEmpty, ignore}) => {
+    allowEmpty = allowEmpty === undefined ? false : allowEmpty;
     if (ignore) {
       let shouldIgnore = false;
       for (const key in ignore) {
@@ -24,24 +22,24 @@ const checkAttributes = (node, requiredAttributes, report) => {
         meta: {
           data: {
             attribute: name,
-            tag: node.name
-          }
-        }
+            tag: node.name,
+          },
+        },
       });
     }
   });
 };
 
 
-module.exports = {
+export default {
   name: 'htmlacademy/tag-req-attr',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
+
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node)) {
-      // eslint-disable-next-line camelcase
+
       for (const tagName in rule_config) {
-        if (Object.hasOwnProperty.call(rule_config, tagName) && tagName === node.name) { // Ensured property belongs to object
-          // eslint-disable-next-line camelcase
+        if (Object.hasOwn(rule_config, tagName) && tagName === node.name) { // Ensured property belongs to object
+
           const requiredAttributes = rule_config[tagName];
           checkAttributes(node, requiredAttributes, report);
         }

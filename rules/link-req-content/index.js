@@ -1,8 +1,6 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const { has_non_empty_attribute, is_comment_node, is_text_node, is_tag_node } = require('@linthtml/dom-utils');
+import {has_non_empty_attribute, is_comment_node, is_text_node, is_tag_node} from '@linthtml/dom-utils';
 
-// eslint-disable-next-line camelcase
+
 function has_text_content(node) {
   if (is_comment_node(node)) {
     return false;
@@ -24,17 +22,15 @@ function has_text_content(node) {
   return false;
 }
 
-module.exports = {
+export default {
   name: 'htmlacademy/link-req-content',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
-    if (is_tag_node(node) && node.name === 'a') {
-      if (has_text_content(node) === false) {
-        report({
-          position: node.loc,
-          message: 'The <a> element must have a text describing the purpose of the link.',
-        });
-      }
+
+  lint(node, rule_config, {report}) {
+    if (is_tag_node(node) && node.name === 'a' && has_text_content(node) === false) {
+      report({
+        position: node.loc,
+        message: 'The <a> element must have a text describing the purpose of the link.',
+      });
     }
-  }
+  },
 };

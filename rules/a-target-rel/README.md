@@ -1,21 +1,24 @@
 # htmlacademy/a-target-rel
-This rule checks that `<a>` links with `target="_blank"` have a `rel` attribute with both `noreferrer` and `noopener` values. Accepts `true` or `false`.
+
+This rule checks that `<a>` elements opening in a new browsing context (`target="_blank"`) declare `rel="noreferrer"`. Per the HTML spec, `noreferrer` implies `noopener`, so a single keyword is enough to cover both the privacy concern (no `Referer` header) and the security concern (the opened page cannot access `window.opener`).
+
+Modern browsers (Chrome, Firefox, Safari) also default to `noopener` for `target="_blank"` since 2020, so this rule is disabled by default in the shipped config. Enable it when you need explicit confirmation in source.
 
 ## true
-Links `<a>` with `target="_blank"` must have a `rel` attribute with both `noreferrer` and `noopener` values.
 
 Invalid:
+
 ```html
 <a href="https://htmlacademy.pro" target="_blank">Link</a>
 
-<a href="https://htmlacademy.pro" target="_blank" rel="noreferrer">Link</a>
-
 <a href="https://htmlacademy.pro" target="_blank" rel="noopener">Link</a>
+<!-- noopener alone does not block referrer leak -->
 ```
 
 Valid:
+
 ```html
-<a href="https://htmlacademy.pro" target="_blank" rel="noreferrer noopener">Link</a>
+<a href="https://htmlacademy.pro" target="_blank" rel="noreferrer">Link</a>
 
 <a href="https://htmlacademy.pro" target="_blank" rel="noopener noreferrer">Link</a>
 ```

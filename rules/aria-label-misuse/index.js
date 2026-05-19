@@ -1,33 +1,35 @@
-'use strict';
-// eslint-disable-next-line camelcase
-const {is_tag_node, has_non_empty_attribute } = require('@linthtml/dom-utils');
+import {is_tag_node, has_non_empty_attribute, attribute_has_value} from '@linthtml/dom-utils';
 
-const whitelisted = [
+const whitelisted = new Set([
   'main', 'nav', 'table', 'td', 'th', 'aside', 'header', 'footer', 'section', 'article', 'summary',
-];
+]);
 
-const interactive = [
+const interactive = new Set([
   'a', 'audio', 'button', 'details', 'iframe', 'input', 'label', 'progress', 'select', 'textarea', 'video',
-];
+]);
+
+const isSvgImage = (node) =>
+  node.name.toLowerCase() === 'svg'
+  && (attribute_has_value(node, 'role', 'img') || attribute_has_value(node, 'role', 'image'));
 
 const isValidUsage = (node) => {
-  /* landmark and other whitelisted elements are valid */
-  if (whitelisted.includes(node.name.toLowerCase())) {
+  const tagName = node.name.toLowerCase();
+
+  if (whitelisted.has(tagName)) {
     return true;
   }
-
-  if (interactive.includes(node.name.toLowerCase())) {
+  if (interactive.has(tagName)) {
     return true;
   }
-
-  /* elements with tabindex (implicit interactive) are valid */
+  if (isSvgImage(node)) {
+    return true;
+  }
   return has_non_empty_attribute(node, 'tabindex');
 };
 
-module.exports = {
+export default {
   name: 'htmlacademy/aria-label-misuse',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node) && has_non_empty_attribute(node, 'aria-label') && !isValidUsage(node)) {
       report({
         position: node.loc,

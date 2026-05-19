@@ -1,10 +1,9 @@
-'use strict';
-const { is_tag_node, attribute_has_value } = require('@linthtml/dom-utils');
+import {is_tag_node, attribute_has_value} from '@linthtml/dom-utils';
 
-module.exports = {
+export default {
   name: 'htmlacademy/req-webp-in-picture',
-  // eslint-disable-next-line camelcase
-  lint(node, rule_config, { report }) {
+
+  lint(node, rule_config, {report}) {
     if (is_tag_node(node) && node.tagName === 'picture') {
       const sourceElements = node.children.filter((child) => child.tagName === 'source');
       const allSourcesAreSvg = sourceElements.every((source) => attribute_has_value(source, 'type', 'image/svg+xml'));
@@ -19,9 +18,9 @@ module.exports = {
       if (!hasWebpSource && !hasAvifSource) {
         report({
           position: node.loc,
-          message: 'Element "picture" must contain a "source" child with a "type" attribute containing "webp" or "avif".'
+          message: 'Element "picture" must contain a "source" child with a "type" attribute containing "webp" or "avif".',
         });
       }
     }
-  }
+  },
 };
