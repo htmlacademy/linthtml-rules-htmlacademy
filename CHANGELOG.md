@@ -2,12 +2,43 @@
 
 ## 2.0.0 — ???
 
-### Breaking Changes
-- Renames `htmlacademy/img-svg-req-dimensions` → `htmlacademy/replaced-elements-req-dimensions`. Now also checks `<video>` and `<iframe>` for `width` and `height` attributes.
+### Breaking
+
+- Migrated to ESM. The plugin now requires Node.js >= 24 and is loaded via ESM `import`. Configs that reference the plugin by name (`plugins: ["linthtml-rules-htmlacademy"]` in `.linthtmlrc`) keep working.
+- Renamed `htmlacademy/img-svg-req-dimensions` → `htmlacademy/replaced-elements-req-dimensions`. The renamed rule also covers `<video>` and `<iframe>` (previously only `<img>` and `<svg>`).
+
+### Added
+
+- New rule `htmlacademy/label-req-for`: validates that every `<label>` is properly associated with a form control. A label must either have a non-empty `for` attribute pointing to the `id` of a labelable element (`<input>`, `<select>`, `<textarea>`, `<button>`, `<meter>`, `<output>`, `<progress>`), or contain a labelable descendant. Empty `for=""` is explicitly allowed.
+- New rule `htmlacademy/req-submit-button`: requires every `<form>` to contain a submit button. Recognises `<button type="submit">`, `<button>` (defaults to submit per the HTML spec), `<input type="submit">`, and external submitters linked through the `form` attribute. Closes [#40](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/40).
+- New rule `htmlacademy/boolean-attr-no-value`: disallows assigning a value to HTML boolean attributes (`disabled`, `required`, `checked`, `readonly`, `multiple`, `selected`, `autofocus`, `hidden`, `open`, `async`, `defer`, `autoplay`, `controls`, `loop`, `muted`, `inert`, and others recognised by `@linthtml/dom-utils`). Implements the codeguide rule about boolean attributes being written without a value.
+- New rule `htmlacademy/icon-button-aria-label`: a `<button>` without visible text content must have an accessible name via `aria-label`, `aria-labelledby`, or `title`. Covers icon-only buttons that would otherwise be invisible to screen readers. Addresses [#80](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/80) — the upstream `button-req-content` rule does not recognise `aria-labelledby`, so this plugin rule explicitly requires an accessible name for content-less buttons.
+- New rule `htmlacademy/attr-order`: enforces an attribute order using configurable groups. The default order matches the codeguide policy `class → src/href → data-* → others` and supports glob patterns like `data-*`, `aria-*`, and `*` for the catch-all group. Order inside a group is free.
+- New rule `htmlacademy/input-name-unique`: each `<input>` inside a `<form>` must have a unique `name`. Radio and checkbox groups (legitimate same-name patterns) are exempt. Closes [#46](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/46).
+- New rule `htmlacademy/heading-level`: document headings must not skip levels (`<h1>` → `<h3>` is flagged) and must start with `<h1>`. Returning to a higher level (`<h3>` → `<h2>`) is allowed. Closes [#41](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/41).
+- New rule `htmlacademy/label-req-text`: `<label>` must contain visible text (or carry an `aria-label`). `<label><input></label>` without any text is reported. Closes [#67](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/67).
+- New rule `htmlacademy/svg-role-img`: inline `<svg>` must declare itself as content via `role="img"` + `aria-label`/`aria-labelledby`, or as decorative via `aria-hidden="true"`. Bare `<svg>` is flagged. Closes [#53](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/53).
+- `peerDependency` on `@linthtml/linthtml >= 0.10.0` so consumers get a clear error when the host package is missing.
+- `node:test`-based test suite: one `test/invalid/<rule>.test.js` per rule with positive and negative cases (~317 tests across all 39 rules).
 
 ### Changed
-- `htmlacademy/a-target-rel`: Now requires only `rel="noopener"` (removed `noreferrer` requirement).
-- `htmlacademy/req-webp-in-picture`: Now accepts `image/avif` as alternative to `image/webp`.
+
+- `htmlacademy/a-target-rel`: now requires `rel="noreferrer"` (previously required `noopener` + `noreferrer`). Per the HTML spec, `noreferrer` implicitly enables `noopener` behaviour, so one keyword is enough. Modern browsers also default to `noopener` for `target="_blank"` since 2020, which is why the rule is still disabled by default in the shipped config — enable it when you want the requirement explicit in source.
+- `htmlacademy/req-webp-in-picture`: accepts `image/avif` as an alternative to `image/webp`.
+- `htmlacademy/attribute-allowed-values`: rule body was non-functional due to a property-access bug (`node.name.chars` on a plain string). The rule now correctly validates attribute values.
+- `htmlacademy/attr-req-value`: no longer crashes when activated without an `ignore` option — an empty ignore list is assumed.
+- `htmlacademy/input-req-label`: end-of-pass issues now use the `htmlacademy/` namespace prefix consistently (previously the second code path reported under `input-req-label` without the namespace).
+- `htmlacademy/no-px-size`: extended to cover `<video>` and `<iframe>` in addition to `<img>` and `<svg>`.
+- `htmlacademy/charset-position`: fixed inverted logic that silently accepted `<meta name="viewport">` (or any other non-charset `<meta>`) as the first child of `<head>`. The rule now strictly requires the first element to be `<meta>` with a `charset` attribute.
+- `htmlacademy/tag-forbid-attr`: each forbidden entry now supports an optional `value` (string or `RegExp`) so attributes can be forbidden only when their value matches, e.g. disallowing `type="text/css"` on `<link>` but allowing other `type` values.
+- `htmlacademy/aria-label-misuse`: `aria-label` on `<svg role="img">` (or `role="image"`) is now considered valid usage, matching how content SVG is exposed to assistive technology. Closes [#79](https://github.com/htmlacademy/linthtml-rules-htmlacademy/issues/79).
+- Node.js requirement bumped to >= 24.
+
+### Migration notes
+
+- Programmatic consumers (`import` or `require`) must use `import plugin from 'linthtml-rules-htmlacademy'`. Configs in `.linthtmlrc` that reference the plugin by name keep working without changes.
+- Replace any usage of `htmlacademy/img-svg-req-dimensions` with `htmlacademy/replaced-elements-req-dimensions` in project-level overrides.
+- If you extend `linthtml-config-htmlacademy`, no action is required — the config already references the new rule names.
 
 ## 1.0.21
 Fixes `req-webp-in-picture` to not check `<picture>` if all `<source>` have attribute `type="image/svg+xml"`.
